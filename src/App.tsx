@@ -5,11 +5,15 @@ import Calendar from './component/Calendar';
 import Attendance from './component/Attendance';
 
 import './App.scss';
+import Greeting from './component/Greeting';
+import Blank from './component/Blank';
 
 function App() {
   return (
     <div className='app'>
       <Intro />
+      <Blank />
+      <Greeting />
       <Contact />
       <Calendar />
       <MapInstance />
