@@ -1,0 +1,24 @@
+$primary-color: #55b786;
+
+.dday {
+  font-size: 16px;
+  margin: 20px;
+  text-align: center;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+
+  // 남은 시간에 따라 색상을 변경하도록 스타일링
+  color: $primary-color;
+
+  // 중첩된 선택자를 사용하여 남은 시간에 따라 배경색을 변경
+  &:before {
+    content: '';
+    display: block;
+    height: 10px;
+    width: 100%;
+    background-color: darken($primary-color, 10%);
+  }
+}
+
