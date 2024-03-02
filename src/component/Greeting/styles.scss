@@ -4,13 +4,12 @@ $main-color: #c87a7a;
   text-align: center;
 }
 .sectionMg {
-  margin: 0 !important;
-  padding: 30px 0 25px;
+  // margin: 0 !important;
+  // padding: 10px 0 25px;
   padding: 40px 0 !important;
-
+  
   .sectionHead {
     text-align: center;
-
     .enstr {
       font-size: 1.2rem;
       font-family: Crimson Pro, serif;
@@ -20,20 +19,30 @@ $main-color: #c87a7a;
       opacity: 0.6;
       -webkit-text-stroke: 0 !important;
     }
-    
+
     .name {
       display: block;
-      font-size: 22px;
+      font-size: 1.4rem;
       font-family: Crimson Pro, serif;
       color: #c88989;
       letter-spacing: 0.5px;
       line-height: 2;
     }
   }
+  
+  .introMent {
+    font-family: sans-serif;
+    font-weight: 400;
+    font-size: 1.1rem;
+    color: #585858;
+    padding: 35px 33px;
+    line-height: 2;
+    .strong {
+      color: rgb(222, 93, 93);
+    }
+  }
 }
-.strong {
-  color: rgb(216, 82, 82);
-}
+
 // .title_eng_writing .sectionHead .enstr {
 //   display: block;
 // }

@@ -1,5 +1,5 @@
 import './styles.scss';
-import mainImage from '../../images/main.jpg';
+import mainImage from '../../images/main2.jpg';
 
 const Intro = () => {
   return (
