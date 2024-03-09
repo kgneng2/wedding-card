@@ -10,6 +10,14 @@ const Contact = () => {
     setIsPopupOpen(!isPopupOpen);
   };
 
+  const handleCall = (number: string) => {
+    window.location.href = 'tel:' + number;
+  };
+
+  const handleMsg = (number: string) => {
+    window.location.href = 'sms:' + number;
+  };
+
   return (
     <div className='content'>
       <div>
@@ -31,27 +39,27 @@ const Contact = () => {
                 <div className='text'>
                   <span> 신랑 </span> <span className='name'> 강준영 </span>
                   <span className='icons'>
-                    <PhoneOutlined />
+                    <PhoneOutlined onClick={() => handleCall('01082974276')} />
                     <span className='blank'></span>
-                    <MailOutlined />
+                    <MailOutlined onClick={() => handleMsg('01082974276')} />
                   </span>
                 </div>
                 <div className='text'>
                   <span> 신랑 아버지 </span>{' '}
                   <span className='name'> 강병재 </span>{' '}
                   <span className='icons'>
-                    <PhoneOutlined />
+                    <PhoneOutlined onClick={() => handleCall('01022786251')} />
                     <span className='blank'></span>
-                    <MailOutlined />
+                    <MailOutlined onClick={() => handleMsg('01022786251')} />
                   </span>
                 </div>
                 <div className='text'>
                   <span> 신랑 어머니 </span>{' '}
                   <span className='name'> 임명희 </span>
                   <span className='icons'>
-                    <PhoneOutlined />
+                    <PhoneOutlined onClick={() => handleCall('01055066251')} />
                     <span className='blank'></span>
-                    <MailOutlined />
+                    <MailOutlined onClick={() => handleMsg('01055066251')} />
                   </span>
                 </div>
               </div>
@@ -60,25 +68,27 @@ const Contact = () => {
                 <div className='text'>
                   <span> 신부 </span> <span className='name'>최산하 </span>
                   <span className='icons'>
-                    <PhoneOutlined />
+                    <PhoneOutlined onClick={() => handleCall('01023124276')} />
                     <span className='blank'></span>
-                    <MailOutlined />
+                    <MailOutlined onClick={() => handleMsg('01023124276')} />
                   </span>
                 </div>
                 <div className='text'>
-                  <span> 신부 아버지 </span> <span className='name'>최용환 </span>
+                  <span> 신부 아버지 </span>{' '}
+                  <span className='name'>최용환 </span>
                   <span className='icons'>
-                    <PhoneOutlined />
+                    <PhoneOutlined onClick={() => handleCall('01036034276')} />
                     <span className='blank'></span>
-                    <MailOutlined />
+                    <MailOutlined onClick={() => handleMsg('01036034276')}/>
                   </span>
                 </div>
                 <div className='text'>
-                  <span> 신부 어머니 </span> <span className='name'> 선경이 </span>
+                  <span> 신부 어머니 </span>{' '}
+                  <span className='name'> 선경이 </span>
                   <span className='icons'>
-                    <PhoneOutlined />
+                    <PhoneOutlined onClick={() => handleCall('01066844276')} />
                     <span className='blank'></span>
-                    <MailOutlined />
+                    <MailOutlined onClick={() => handleMsg('01066844276')}/>
                   </span>
                 </div>
               </div>
