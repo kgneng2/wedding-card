@@ -43,13 +43,27 @@ const Dday = () => {
 
   return (
     <div className='dday'>
-      결혼식까지{' '}
-      {`
-      ${remainingTime.days}일 
-      ${remainingTime.hours}시간 
-      ${remainingTime.minutes}분 
-      ${remainingTime.seconds}초
-       ${remainingTime.extraString}`}
+      <div className='remainTxt'>
+        <div className='desc' style={{ opacity: 0.4 }}>
+          DAYS
+        </div>
+        <div className='desc' style={{ opacity: 0.4 }}>
+          HOUR
+        </div>
+        <div className='desc' style={{ opacity: 0.4 }}>
+          MIN
+        </div>
+        <div className='desc' style={{ opacity: 0.4 }}>
+          SEC
+        </div>
+        <div className='desc'>{remainingTime.days}</div>
+        <div className='desc'>{remainingTime.hours}</div>
+        <div className='desc'>{remainingTime.minutes}</div>
+        <div className='desc'>{remainingTime.seconds}</div>
+      </div>
+      <div className='text'>
+        {`준영, 산하의 결혼식이 ${remainingTime.days}일 ${remainingTime.extraString}`}
+      </div>
     </div>
   );
 };

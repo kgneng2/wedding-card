@@ -1,0 +1,35 @@
+$primary-color: #c88989;
+
+.dday {
+  text-align: center;
+  padding: 10px 20px;
+  margin-bottom: 30px;
+  background-color: #f6efef;
+
+  .remainTxt {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    padding-right: 60px;
+    padding-left: 60px;
+    padding-bottom: 10px;
+    height: 80;
+
+    .desc {
+      color: #2b2222;
+      // opacity: 0.4;
+      font-size: 15px;
+      border: #2b2222;
+      font-weight: 600;
+      padding: 3px;
+    }
+  }
+
+  .text {
+    padding-top: 15px;
+    font-family: sans-serif;
+    text-align: center;
+    letter-spacing: 0.05em;
+
+  }
+}

@@ -1,5 +1,3 @@
-import Blank from '../Blank';
-import Contact from '../Contact';
 import './styles.scss';
 
 const Greeting = () => {

@@ -1,6 +1,5 @@
 import React from 'react';
 import './styles.scss';
-import Dday from './Dday';
 
 const Calendar = () => {
   const daysInMonth = 31;
@@ -28,9 +27,15 @@ const Calendar = () => {
     });
     // 달력 날짜 표시
     for (let i = 1; i <= daysInMonth; i++) {
-      if (i === 25) {
+      if ([4, 11, 18].includes(i)) {
         dateCells.push(
-          <div className='calendar-dday' key={`date-${i}`}>
+          <div className='calendar-sunday' key={`date-${i}`}>
+            {i}
+          </div>
+        );
+      } else if (i === 25) {
+        dateCells.push(
+          <div className='calendar-dday calendar-sunday' key={`date-${i}`}>
             {i}
           </div>
         );
@@ -48,12 +53,16 @@ const Calendar = () => {
 
   return (
     <div className='calendar'>
-      <div className='calendar-header'>
-        <h3>Calendar</h3>
-        <h3>24년 8월</h3>
+      <div className='calendar-container'>
+        <div className='calendar-header'>
+          <h4 className='sub-title'> WEDDING DAY </h4>
+          <div className='date'>2024.08.25 일요일 오후 12:30</div>
+          <div className='date'>양재 AT 포레 웨딩홀 5층</div>
+        </div>
+        <div className='calendar-horizon'></div>
+        <div className='calendar-body'>{renderDateCells()}</div>
+        <div className='calendar-horizon'></div>
       </div>
-      <div className='calendar-body'>{renderDateCells()}</div>
-      <Dday />
     </div>
   );
 };

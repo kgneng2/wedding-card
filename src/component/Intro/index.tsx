@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import './styles.scss';
 import mainImage from '../../images/main2.jpg';
 

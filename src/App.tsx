@@ -7,6 +7,8 @@ import Attendance from './component/Attendance';
 import './App.scss';
 import Greeting from './component/Greeting';
 import Blank from './component/Blank';
+import Dday from './component/Dday';
+import Gallery from './component/Gallery';
 
 function App() {
   return (
@@ -15,7 +17,9 @@ function App() {
       <Blank />
       <Greeting />
       <Contact />
+      <Gallery />
       <Calendar />
+      <Dday />
       <MapInstance />
       <Attendance />
     </div>
