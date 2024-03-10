@@ -1,6 +1,6 @@
 .gallery {
   padding: 40px 0 !important;
-  background-color: #e9acac;
+  background-color: #f1e6e6;
 
   .container {
     margin-right: 10px;
@@ -52,12 +52,16 @@
 .modal {
 
 }
-// .ant-image-preview-wrap {
-//   background-color: rgb(0, 0, 0, 0.7);
-// }
+.ant-image-preview-wrap {
+  background-color: rgb(0, 0, 0, 0.7);
+}
 
-// .ant-image-preview-img {
-//   max-width: 100%;
-//   max-height: 100%;
-//   object-fit: contain;
-// }
+.ant-image-preview-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.ant-image-preview-operations {
+  display: none;
+}
