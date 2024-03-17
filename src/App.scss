@@ -6,3 +6,20 @@
   background-color: rgb(241, 241, 241);
 }
 
+.opening {
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* 수평 가운데 정렬 */
+  align-items: center; /* 수직 가운데 정렬 */
+  height: 100vh; // 뷰포트 높이를 화면에 꽉 차도록 설정
+
+  .text {
+    text-align: center; // 텍스트 가운데 정렬
+    padding: 30px; // 텍스트 주위에 패딩 추가
+    color: #c88989; // 텍스트 색상 설정
+    font-weight: 600;
+    font-size: 20px;
+  }
+}
