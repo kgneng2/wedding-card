@@ -1,4 +1,4 @@
-import MapInstance from './component/Map';
+import Location from './component/Location';
 import Intro from './component/Intro';
 import Contact from './component/Contact';
 import Calendar from './component/Calendar';
@@ -20,7 +20,7 @@ function App() {
       <Gallery />
       <Calendar />
       <Dday />
-      <MapInstance />
+      <Location />
       <Attendance />
     </div>
   );
