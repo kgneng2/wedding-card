@@ -16,6 +16,7 @@ const Intro = () => {
         </div>
         <div>
           <div className='photo-wrap simple'>
+            {/* <div className='immage'> */}
             <div className='intro-blend-wrap photo gradient-none'>
               <img
                 src={mainImage}

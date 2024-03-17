@@ -78,7 +78,7 @@ const Location = () => {
             강남역과 3호선 양재역에서 신분당선 환승 가능
           </div>
         </div>
-        <div className='info-box'>
+        {/* <div className='info-box'>
           <div className='info-ti'> 버스 </div>
           <div className='info-txt'>
             버스(초록지선, 파랑간선), 일반버스 - "AT센터.양재꽃시장"에서 하차
@@ -95,7 +95,7 @@ const Location = () => {
             - (경기버스) 1311, 1550, 1550-1, 1560 <br />- 마을버스 -
             "시민의숲.양재꽃시장"에서 하차 (양재역) 서초 20
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

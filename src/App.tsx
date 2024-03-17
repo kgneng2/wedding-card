@@ -14,6 +14,8 @@ import { useEffect, useState } from 'react';
 
 import heartAnimation from './animation/heart.json';
 import Lottie from 'react-lottie';
+import Information from './component/Information';
+import { ConfigProvider } from 'antd';
 
 const Opening: React.FC<{
   text: string;
@@ -57,7 +59,7 @@ const Opening: React.FC<{
 };
 
 function App() {
-  const [showOpening, setShowOpening] = useState<Boolean>(true);
+  const [showOpening, setShowOpening] = useState<Boolean>(false);
 
   const handleFinishTyping = () => {
     // 타이핑 효과가 끝나면 해당 컴포넌트를 사라지게 함
@@ -65,13 +67,25 @@ function App() {
   };
 
   return (
-    <>
-      {showOpening && (
+    <ConfigProvider
+      theme={{
+        components: {
+          Tabs: {
+            inkBarColor: '#305e30',
+            itemHoverColor: '#305e30',
+            itemSelectedColor: '#305e30',
+            titleFontSize: 15,
+            fontWeightStrong: 1,
+          },
+        },
+      }}
+    >
+      {/* {showOpening && (
         <Opening
           text={'준영 산하 우리 이제 결혼합니다'}
           onFinish={handleFinishTyping}
         />
-      )}
+      )} */}
       {!showOpening && (
         <div className='app'>
           <Intro />
@@ -82,10 +96,11 @@ function App() {
           <Calendar />
           <Dday />
           <Location />
-          <Attendance />
+          <Information />
+          {/* <Attendance /> */}
         </div>
       )}
-    </>
+    </ConfigProvider>
   );
 }
 

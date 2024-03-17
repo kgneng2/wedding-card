@@ -40,13 +40,29 @@
       font-size: 16px;
     }
 
-    .photo-wrap.simple:not(.overlay) {
-      padding: 0 24px;
-      padding-top: 0px;
-      padding-right: 24px;
-      padding-bottom: 0px;
-      padding-left: 24px;
+    .photo-wrap.simple {
+      padding: 0;
+      // padding: 0 24px;
+      // padding-top: 0px;
+      // padding-right: 24px;
+      // padding-bottom: 0px;
+      // padding-left: 24px;
     }
+
+    // .immage {
+    //   background-image: linear-gradient(
+    //       to top,
+    //       rgba(255, 255, 255, 0),
+    //       rgba(255, 255, 255, 0.3) 100%
+    //     ),
+    //     url('../../images/main2.jpg');
+    //   width: calc(2cm * (96 / 2.54));
+    //   background-size: cover;
+    //   background-position: center;
+    //   /* 다음 두 속성은 필요에 따라 조정할 수 있습니다. */
+    //   height: 600px; /* 배경 이미지의 높이 */
+    //   width: 100%; /* 배경 이미지의 너비 */
+    // }
 
     .intro-blend-wrap {
       position: relative;
@@ -96,7 +112,7 @@
         .bride {
           text-align: right;
           font-family: var(--font-regular), serif;
-          font-size: 1.3rem
+          font-size: 1.3rem;
         }
 
         .divider {
