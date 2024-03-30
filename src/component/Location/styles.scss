@@ -82,6 +82,15 @@
         font-family: 'Noto Sans KR';
         padding: 3px;
         letter-spacing: 0.3px;
+        line-height: 20px;
+        
+        .indent {
+          text-indent: 10px;
+          line-height: 20px;
+        }
+        .indent2 { 
+          text-indent: 20px;
+        }
       }
     }
   }

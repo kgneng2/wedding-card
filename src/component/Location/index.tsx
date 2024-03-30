@@ -64,38 +64,21 @@ const Location = () => {
           </div>
         </div>
         <div className='info-box'>
-          <div className='info-ti'> 자가용 </div>
+          <div className='info-ti'> 자가용 🚗</div>
           <div className='info-txt'>
-            네비게이션 : "AT센터" 검색 <br />- 경부고속도로 양재 IC 개포,
-            가락방향 진출 후 염곡사거리에서 좌회전 후 U턴 꽃시장 옆
+            네비게이션 : "AT센터" 검색 
+            <div className='indent'>· 경부고속도로 양재 IC 개포, 가락방향 진출 후 염곡사거리에서</div>
+            <div className='indent2'>좌회전 후 U턴 꽃시장 옆</div>
           </div>
         </div>
         <div className='info-box'>
-          <div className='info-ti'> 지하철 </div>
+          <div className='info-ti'> 지하철 🚇 </div>
           <div className='info-txt'>
-            신분당선 양재시민의숲역(매헌) 하차 <br />
-            - 지상 4번출구 이용 / 지하 내부 통로로 바로 연결 가능 <br />- 2호선
-            강남역과 3호선 양재역에서 신분당선 환승 가능
+          신분당선 양재시민의숲역(매헌) 하차
+          <div className='indent'>· 지상 4번출구 이용 / 지하 내부 통로로 바로 연결 가능 </div>
+          <div className='indent'>· 2호선 강남역과 3호선 양재역에서 신분당선 환승 가능</div>
           </div>
         </div>
-        {/* <div className='info-box'>
-          <div className='info-ti'> 버스 </div>
-          <div className='info-txt'>
-            버스(초록지선, 파랑간선), 일반버스 - "AT센터.양재꽃시장"에서 하차
-            <br />
-            - 서울-초록버스 : 0411, 4432 <br />
-            - 서울-파랑버스 140, 400, 405, 421, 440, 441, 452, 470, 741 <br />
-            - 경기 : 11-3, 917(잠실, 과천, 안양) <br />
-            좌석버스, 빨강 광역노선 - "시민의숲.양재꽃시장"에서 하차 <br />
-            - (광역버스) 9404, 9408, 9409, 9711 <br />- (인천) 9100, 9200, 9201,
-            9300, 9500, 9501, 9802 M6405, M6450 <br />
-            - (성남) 9408, 9400 <br />
-            - (수원) 3002, 3007, 3008 <br />
-            - (용인) 5001, 5001-1, 5002B <br />
-            - (경기버스) 1311, 1550, 1550-1, 1560 <br />- 마을버스 -
-            "시민의숲.양재꽃시장"에서 하차 (양재역) 서초 20
-          </div>
-        </div> */}
       </div>
     </div>
   );
