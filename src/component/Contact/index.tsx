@@ -19,7 +19,7 @@ const Contact = () => {
   };
 
   return (
-    <div className='content'>
+    <div className='contact'>
       <div>
         강병재·임명희 <span className='son'>의 장남 </span> 준영{' '}
       </div>
