@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import './styles.scss';
 import { Button, message } from 'antd';
 
-import mapImg from '../../images/map.png';
+import mapImg from '../../../public/images/map.png';
 import { CopyOutlined } from '@ant-design/icons';
 
 const Location = () => {
@@ -53,7 +53,7 @@ const Location = () => {
           서울 서초구 강남대로 27 (양재동232번지)
           <div className='navigation'>
             <Button className='btn' onClick={naviMapAction}>
-              <img src={mapImg} width='20' height='20' />
+              <img src={mapImg.src} width='20' height='20' />
               <span className='txt'>네이버</span>
               빠른길 찾기
             </Button>

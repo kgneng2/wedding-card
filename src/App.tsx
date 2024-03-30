@@ -59,12 +59,17 @@ const Opening: React.FC<{
 };
 
 function App() {
-  const [showOpening, setShowOpening] = useState<Boolean>(false);
+  const [showOpening, setShowOpening] = useState<Boolean>(false); // 여기 바꿔야됨.
+  // const [showOpening, setShowOpening] = useState<Boolean>(true);
 
   const handleFinishTyping = () => {
     // 타이핑 효과가 끝나면 해당 컴포넌트를 사라지게 함
     setShowOpening(false);
   };
+
+  useEffect(() => {
+    console.log(showOpening)
+  })
 
   return (
     <ConfigProvider
@@ -80,12 +85,12 @@ function App() {
         },
       }}
     >
-      {/* {showOpening && (
+      {showOpening && (
         <Opening
           text={'준영 산하 우리 이제 결혼합니다'}
           onFinish={handleFinishTyping}
         />
-      )} */}
+      )}
       {!showOpening && (
         <div className='app'>
           <Intro />
@@ -97,7 +102,7 @@ function App() {
           <Dday />
           <Location />
           <Information />
-          {/* <Attendance /> */}
+          <Attendance />
         </div>
       )}
     </ConfigProvider>

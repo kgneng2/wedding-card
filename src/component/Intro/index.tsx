@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 import './styles.scss';
-import mainImage from '../../images/main2.jpg';
+import mainImage from '../../../public/images/main2.jpg';
 
 const Intro = () => {
   return (
@@ -19,7 +19,7 @@ const Intro = () => {
             {/* <div className='immage'> */}
             <div className='intro-blend-wrap photo gradient-none'>
               <img
-                src={mainImage}
+                src={mainImage.src}
                 width='627'
                 height='853'
                 className='intro-blend-image img-blur'
