@@ -17,8 +17,11 @@ const Information = () => {
       content: (
         <div className='tab'>
           <img src={hallImg} width='100%'></img>
-          - 본식은 5층에서 12시 30분에 진행합니다 <br />- 당일 단독홀로 오랜만에
-          만난 가족, 지인 분들과 여유있는 시간 보내시길 희망합니다
+          <div className='line'>😃 본식은 5층에서 12시 30분에 진행합니다</div>
+          <div className='line'>
+            😃 당일 단독홀로 오랜만에 만난 가족, 지인 분들과 여유있는 시간
+            보내시길 소망합니다
+          </div>
         </div>
       ),
     },
@@ -27,8 +30,17 @@ const Information = () => {
       content: (
         <div className='tab'>
           <img src={banquetImg} width='100%'></img>
-          - 본식은 5층에서 12시 30분에 진행합니다 <br />- 당일 단독홀로 오랜만에
-          만난 가족, 지인 분들과 여유있는 시간 보내시길 희망합니다
+          <div className='line'>🍚 지하 1층에 연회장이 준비 되어 있습니다.</div>
+          <div className='line'>
+            🥘 예식 시작 30분 전인 12시 부터 이용이 가능합니다.
+          </div>
+          <div className='line'>
+            🍽️ 단독 연회장에서 혼잡하지 않게 식사 가능합니다.
+          </div>
+          <div className='line'>
+            🍺 생맥주 기계 등 주류도 무제한이니 편하게 즐겨주시면
+            감사하겠습니다.
+          </div>
         </div>
       ),
     },
@@ -37,8 +49,8 @@ const Information = () => {
       content: (
         <div className='tab'>
           <img src={brideRoomImg} width='100%'></img>
-          - 본식은 5층에서 12시 30분에 진행합니다 <br />- 당일 단독홀로 오랜만에
-          만난 가족, 지인 분들과 여유있는 시간 보내시길 희망합니다
+          <div className='line'>💐 신부대기실은 홀 반대편에 위치하고 있습니다.</div>
+          <div className='line'>👰 조금 일찍 방문하여 예쁜 신부에게 따듯한 축하 한마디 해주시면 감사하겠습니다.</div>
         </div>
       ),
     },
