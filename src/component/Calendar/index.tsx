@@ -59,9 +59,13 @@ const Calendar = () => {
           <div className='date'>2024.08.25 일요일 오후 12:30</div>
           <div className='date'>양재 AT 포레 웨딩홀 5층</div>
         </div>
-        <div className='calendar-horizon'></div>
-        <div className='calendar-body'>{renderDateCells()}</div>
-        <div className='calendar-horizon'></div>
+        <div className='calendar-circle'>
+          <div className='calendar-month'> 8월 </div>
+          {/* <div className='calendar-horizon'></div> */}
+          <div className='calendar-body'>{renderDateCells()}</div>
+        </div>
+
+        {/* <div className='calendar-horizon'></div> */}
       </div>
     </div>
   );

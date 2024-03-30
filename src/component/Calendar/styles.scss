@@ -1,6 +1,6 @@
 .calendar {
   padding: 40px 0 !important;
-  background-color: #f6efef;
+  background-color: #c7fff3;
 }
 
 .calendar-container {
@@ -43,6 +43,18 @@
   margin-bottom: 20px;
   padding-bottom: 10px;
   border-bottom: 1px solid rgb(168, 146, 107, 0.2);
+}
+
+.calendar-circle { 
+  border-radius: 10%;
+  background-color: #fbfbfb;
+  padding : 20px
+}
+
+.calendar-month {
+  padding-bottom: 10px;
+  font-size: 25px;
+  font-weight: 700;
 }
 
 .calendar-body {
