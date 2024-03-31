@@ -44,16 +44,16 @@ const Dday = () => {
   return (
     <div className='dday'>
       <div className='remainTxt'>
-        <div className='desc' style={{ opacity: 0.4 }}>
+        <div className='desc' style={{ opacity: 0.8 }}>
           DAYS
         </div>
-        <div className='desc' style={{ opacity: 0.4 }}>
+        <div className='desc' style={{ opacity: 0.8 }}>
           HOUR
         </div>
-        <div className='desc' style={{ opacity: 0.4 }}>
+        <div className='desc' style={{ opacity: 0.8 }}>
           MIN
         </div>
-        <div className='desc' style={{ opacity: 0.4 }}>
+        <div className='desc' style={{ opacity: 0.8 }}>
           SEC
         </div>
         <div className='desc'>{remainingTime.days}</div>
@@ -62,7 +62,9 @@ const Dday = () => {
         <div className='desc'>{remainingTime.seconds}</div>
       </div>
       <div className='text'>
-        {`준영, 산하의 결혼식이 ${remainingTime.days}일 ${remainingTime.extraString}`}
+        <span> 준영, 산하의 결혼식이 </span>
+        <span className='remainday'>{`${remainingTime.days}일`} </span>
+        <span >{`${remainingTime.extraString}`} </span>
       </div>
     </div>
   );

@@ -4,7 +4,9 @@ $primary-color: #a2d3cd;
   text-align: center;
   padding: 10px 20px;
   margin-bottom: 30px;
-  background-color: #f6efef;
+  // background-color: #f6efef;
+  background-color: #a2d3cd;
+  color: #ffff;
 
   .remainTxt {
     display: grid;
@@ -16,10 +18,10 @@ $primary-color: #a2d3cd;
     height: 80;
 
     .desc {
-      color: #2b2222;
+      // color: #2b2222;
       // opacity: 0.4;
       font-size: 15px;
-      border: #2b2222;
+      // border: #2b2222;
       font-weight: 600;
       padding: 3px;
     }
@@ -29,7 +31,10 @@ $primary-color: #a2d3cd;
     padding-top: 15px;
     font-family: sans-serif;
     text-align: center;
-    letter-spacing: 0.05em; 
+    letter-spacing: 0.05em;
 
+    .remainday {
+      color: #3a3a3a;
+    }
   }
 }

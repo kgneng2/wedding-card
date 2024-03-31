@@ -1,6 +1,5 @@
 .calendar {
   padding: 40px 0 !important;
-  background-color: #a2d3cd;
 }
 
 .calendar-container {
@@ -45,16 +44,18 @@
   border-bottom: 1px solid rgb(168, 146, 107, 0.2);
 }
 
-.calendar-circle { 
+.calendar-circle {
   border-radius: 10%;
-  background-color: #fbfbfb;
-  padding : 20px
+  // background-color: RGB(129, 187, 179,0.5);
+  background-color: rgba(162, 211, 205);
+  padding: 20px;
 }
 
 .calendar-month {
   padding-bottom: 10px;
   font-size: 25px;
-  font-weight: 700;
+  font-weight: 500;
+  color: #3a3a3a;
 }
 
 .calendar-body {
@@ -66,11 +67,12 @@
 .calendar-cell {
   padding: 10px;
   text-align: center;
+  color: #ffff;
   // border: 0px solid #1acb3a;
 }
 
 .calendar-dday {
-  background-color: #dfc7c0;
+  background-color: #ffffff;
   background-size: cover;
   padding: 10px;
   text-align: center;
@@ -80,7 +82,7 @@
 
 .calendar-sunday {
   padding: 10px;
-  color: #d20a0a;
+  color: #3a3a3a;
 }
 
 .day-of-week {
