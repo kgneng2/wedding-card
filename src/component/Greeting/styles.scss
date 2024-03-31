@@ -1,5 +1,3 @@
-$main-color: #c87a7a;
-
 .introLayer {
   text-align: center;
 }
@@ -7,7 +5,7 @@ $main-color: #c87a7a;
   // margin: 0 !important;
   // padding: 10px 0 25px;
   padding: 40px 0 !important;
-  
+
   .sectionHead {
     text-align: center;
     .enstr {
@@ -15,7 +13,7 @@ $main-color: #c87a7a;
       font-family: Crimson Pro, serif;
       letter-spacing: 3px;
       line-height: 20px;
-      color: #c88989;
+      color: #a2d3cd;
       opacity: 0.6;
       -webkit-text-stroke: 0 !important;
     }
@@ -24,12 +22,12 @@ $main-color: #c87a7a;
       display: block;
       font-size: 1.4rem;
       font-family: Crimson Pro, serif;
-      color: #c88989;
+      color: #a2d3cd;
       letter-spacing: 0.5px;
       line-height: 2;
     }
   }
-  
+
   .introMent {
     font-family: sans-serif;
     font-weight: 400;
@@ -38,7 +36,7 @@ $main-color: #c87a7a;
     padding: 35px 33px;
     line-height: 2;
     .strong {
-      color: rgb(222, 93, 93);
+      color: rgb(0, 0, 0);
     }
   }
 }

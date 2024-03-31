@@ -5,27 +5,32 @@
   font-family: 'Arita buri';
   overflow: hidden;
 
+  
   .door {
     .image {
       float: right;
       height: auto;
-      width: 87%;
+      width: 85%;
       margin-bottom: 40px;
+      border-bottom-left-radius: 40px;
     }
   }
 
   .name-container {
     float: right;
-    width: 13%; /* 수정 */
+    width: 15%; /* 수정 */
     padding-top: 50px;
     padding-left: 0; /* 수정 */
+    text-align: center;
   }
 
   .name {
     padding-top: 0;
-    padding-left: 20px; /* 수정 */
+    // padding-left: 15px; /* 수정 */
     font-size: 20px;
-    font-family: Arita Sans;
+    font-family: "NanumMyeongjo";
+    // font-family: Crimson Pro, serif;
+    color: #454444;
 
     .young {
       padding-bottom: 0;
@@ -71,24 +76,35 @@
   text-align: center;
   
   .txt {
+    // background-color: #a2d3cd;
     font-family: Crimson Pro, serif;
     font-size: 35px;
-    margin-bottom: 30px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    color: #0d0d0d;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+
   }
 
   .info { 
+    // background-color: #a2d3cd;
+    padding: 10px;
+    // border-bottom-left-radius: 20px;
+    // border-bottom-right-radius: 20px;
+
+    // border-radius: 20px;
+
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     font-size: 15px;
     line-height: 10px;
-    // display: inline-block;
-
     color: #797878;
     
     .date {
       padding-left: 25px;
       text-align: left;
-      border-right: 0.5px solid #bebebe; // Shorthand for border-right-width, border-right-style
+      border-right: 0.5px solid #a2d3cd; // Shorthand for border-right-width, border-right-style
     }
   
     .address { 
