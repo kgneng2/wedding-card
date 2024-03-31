@@ -1,0 +1,130 @@
+// .mcard-view {
+//   position: relative;
+//   width: 100%;
+//   max-width: 430px;
+//   padding: 0;
+//   margin: auto;
+//   color: var(--text-color);
+//   background: var(--primary-bg-color);
+//   background-image: var(--primary-bg-image);
+//   -ms-overflow-style: none;
+//   line-height: 2rem;
+//   font-family: var(--font-regular), serif;
+//   letter-spacing: var(--font-regular-spacing);
+//   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04);
+//   .mcard-intro {
+//     position: relative;
+//     padding: 0 0 40px;
+//     --intro-text-color: #49413a;
+//     --intro-text-light-color: #595959;
+//     .title {
+//       padding: 48px 0 30px;
+//       color: var(--intro-text-color);
+//       font-family: Crimson Pro;
+//       line-height: 21px;
+//       border-color: #000;
+//     }
+//     .dates {
+//       font-size: 0;
+//     }
+//     .dates > span {
+//       display: inline-block;
+//       padding: 0 8px 0.1rem;
+//       border-right: 1px solid; // Shorthand for border-right-width, border-right-style
+//       font-size: 30px;
+//       line-height: 20px;
+//       text-align: center;
+//     }
+//     .wod {
+//       letter-spacing: 2px;
+//       font-size: 16px;
+//     }
+
+//     .photo-wrap.simple {
+//       padding: 0;
+//       // padding: 0 24px;
+//       // padding-top: 0px;
+//       // padding-right: 24px;
+//       // padding-bottom: 0px;
+//       // padding-left: 24px;
+//     }
+
+//     // .immage {
+//     //   width: calc(2cm * (96 / 2.54));
+//     //   background-size: cover;
+//     //   background-position: center;
+//     //   /* 다음 두 속성은 필요에 따라 조정할 수 있습니다. */
+//     //   height: 600px; /* 배경 이미지의 높이 */
+//     //   width: 100%; /* 배경 이미지의 너비 */
+//     // }
+
+//     .intro-blend-wrap {
+//       position: relative;
+//       overflow: hidden;
+//       overflow-x: hidden;
+//       overflow-y: hidden;
+//       line-height: 0;
+//     }
+
+//     .gradient-none {
+//       -webkit-mask-image: linear-gradient(180deg, #000, #000);
+//       mask-image: linear-gradient(180deg, #000, #000);
+//     }
+
+//     .photo {
+//       line-height: 0;
+//     }
+
+//     .intro-blend-image {
+//       position: relative;
+//       width: 100%;
+//       height: 100%;
+//       pointer-events: none;
+//     }
+
+//     .img-blur {
+//       filter: blur(var(--img-blur));
+//       -webkit-filter: blur(var(--img-blur));
+//     }
+
+//     .bottom {
+//       margin-top: 30px;
+//       font-size: 0.9rem;
+
+//       .name {
+//         display: flex;
+//         align-items: center;
+//         justify-content: center;
+//         gap: 16px;
+//         font-size: 1.5rem; /* Set an appropriate font size */
+//         // font-size: 1rem; /* Set an appropriate font size */
+//         margin-bottom: 12px;
+//         letter-spacing: 1px;
+//         color: #000;
+
+//         .groom,
+//         .bride {
+//           text-align: right;
+//           font-family: var(--font-regular), serif;
+//           font-size: 1.3rem;
+//         }
+
+//         .divider {
+//           position: relative;
+//           top: 0.5px;
+//           display: inline-block;
+//           content: '';
+//           width: 1px;
+//           height: 1.1rem;
+//           background: #000;
+//           opacity: 0.85;
+//         }
+//       }
+
+//       .datetime {
+//         font-size: 0.9rem;
+//         font-family: var(--font-regular), serif;
+//       }
+//     }
+//   }
+// }
