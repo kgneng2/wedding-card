@@ -1,8 +1,6 @@
 @import url('https://webfontbox.github.io/Arita/font.css');
 @import url('https://webfontbox.github.io/Arita/font.min.css');
 
-$font: 'Arita buri';
-
 .intro {
   font-family: 'Arita buri';
   overflow: hidden;
@@ -11,14 +9,14 @@ $font: 'Arita buri';
     .image {
       float: right;
       height: auto;
-      width: 83%;
+      width: 87%;
       margin-bottom: 40px;
     }
   }
 
   .name-container {
     float: right;
-    width: 17%; /* 수정 */
+    width: 13%; /* 수정 */
     padding-top: 50px;
     padding-left: 0; /* 수정 */
   }
@@ -27,15 +25,19 @@ $font: 'Arita buri';
     padding-top: 0;
     padding-left: 20px; /* 수정 */
     font-size: 20px;
-    font-family: 'Arita buri';
+    font-family: Arita Sans;
 
-    .txt { 
+    .young {
+      padding-bottom: 0;
+    }
+
+    .txt {
       padding-bottom: 5px;
     }
-    
-    .ring { 
-      padding-bottom: 5px;
-      size: 10px;
+
+    .ring {
+      padding-top: 20px;
+      padding-bottom: 20px;
     }
   }
 
@@ -63,4 +65,46 @@ $font: 'Arita buri';
   // border-radius: 5%;
   // background-image: url('../../../public/images/main2.jpg');
   // position: relative;
+}
+
+.celebrate {
+  text-align: center;
+  
+  .txt {
+    font-family: Crimson Pro, serif;
+    font-size: 35px;
+    margin-bottom: 30px;
+  }
+
+  .info { 
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    font-size: 15px;
+    line-height: 10px;
+    // display: inline-block;
+
+    color: #797878;
+    
+    .date {
+      padding-left: 25px;
+      text-align: left;
+      border-right: 0.5px solid #bebebe; // Shorthand for border-right-width, border-right-style
+    }
+  
+    .address { 
+      padding-right: 25px;
+      text-align: right;
+    }
+  }
+
+
+//     .dates {
+//       font-size: 0;
+//     }
+//     .dates > span {
+//       font-size: 30px;
+//       line-height: 20px;
+//       text-align: center;
+//     }
+  // }
 }
