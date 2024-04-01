@@ -1,14 +1,16 @@
 $main-color: #a2d3cd;
-$font: 'Arita buri';
 $background-color: rgb(255, 255, 255);
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
 
 @font-face {
   font-family: 'MaruBuri2';
-  font-weight: 100; 
-  font-style: normal; 
+  font-weight: 100;
+  font-style: normal;
   font-display: swap;
-  src: url('../public/font/MaruBuri-Regular.woff') format("woff");
+  src: url('../public/font/MaruBuri-Regular.woff') format('woff');
 }
+
 
 html,
 body {
@@ -16,12 +18,13 @@ body {
   padding: 0;
   width: 100%;
   height: 100%;
-  font-family: 'MaruBuri2';
+  // font-family: 'MaruBuri2';
 }
 
 //여기전역변수 입력
 .app {
-  font-family: 'MaruBuri2';
+  // font-family: source-han-sans-korean, sans-serif;
+
   text-align: 'center';
   background-color: var(--bacground-color);
 
