@@ -1,11 +1,10 @@
 @import url('https://webfontbox.github.io/Arita/font.css');
 @import url('https://webfontbox.github.io/Arita/font.min.css');
+@import url('https://webfontworld.github.io/naver/MaruBuri.css');
 
 .intro {
-  font-family: 'Arita buri';
   overflow: hidden;
 
-  
   .door {
     .image {
       float: right;
@@ -28,8 +27,7 @@
     padding-top: 0;
     // padding-left: 15px; /* 수정 */
     font-size: 20px;
-    font-family: "NanumMyeongjo";
-    // font-family: Crimson Pro, serif;
+
     color: #454444;
 
     .young {
@@ -76,8 +74,8 @@
   text-align: center;
   
   .txt {
-    // background-color: #a2d3cd;
-    font-family: Crimson Pro, serif;
+    // background-color: #a2d3cd;w
+
     font-size: 35px;
     padding-bottom: 20px;
     margin-bottom: 20px;

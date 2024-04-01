@@ -1,20 +1,27 @@
-@import url('https://webfontbox.github.io/Arita/font.css');
-@import url('https://webfontbox.github.io/Arita/font.min.css');
 $main-color: #a2d3cd;
 $font: 'Arita buri';
 $background-color: rgb(255, 255, 255);
 
-html, body {
+@font-face {
+  font-family: 'MaruBuri2';
+  font-weight: 100; 
+  font-style: normal; 
+  font-display: swap;
+  src: url('../public/font/MaruBuri-Regular.woff') format("woff");
+}
+
+html,
+body {
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
+  font-family: 'MaruBuri2';
 }
 
-//여기전역변수 입력 
+//여기전역변수 입력
 .app {
-  // font-family: 'Arita buri';
-  font-family: var(--font); //마루부리 다운
+  font-family: 'MaruBuri2';
   text-align: 'center';
   background-color: var(--bacground-color);
 
@@ -27,7 +34,7 @@ html, body {
 
 .opening {
   // background-color: #ffffff;
-  background-color: rgba(162, 211, 205,0.7);
+  background-color: rgba(162, 211, 205, 0.7);
   backdrop-filter: blur(5px);
   margin: 0;
   padding: 0;
@@ -39,7 +46,7 @@ html, body {
   .text {
     text-align: center; // 텍스트 가운데 정렬
     padding: 30px; // 텍스트 주위에 패딩 추가
-    color: #3a3a3a;; // 텍스트 색상 설정
+    color: #3a3a3a; // 텍스트 색상 설정
     font-weight: 600;
     font-size: 20px;
   }
