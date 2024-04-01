@@ -23,11 +23,11 @@ const Intro = () => {
           ></img>
         </div>
         <div className='celebrate'>
-          <div className='txt'>We're getting married</div>
+          <div className='txt'>We're Getting Married</div>
           <div className='info'>
             <div className='date'>
               <p>2024년 8월 25일</p>
-              <p>일요일 PM 12시 30분</p>
+              <p>일요일 12시 30분</p>
             </div>
             {/* <div className='separator'></div> */}
             <div className='address'>
