@@ -5,9 +5,6 @@ const Intro = () => {
   return (
     <>
       <div className='intro'>
-        <div className='door'>
-          <img src={mainImage.src} className='image'></img>
-        </div>
         <div className='name-container'>
           <div className='name'>
             <div className='txt'>강</div>
@@ -18,6 +15,12 @@ const Intro = () => {
             <div className='txt'>산</div>
             <div className='txt'>하</div>
           </div>
+        </div>
+        <div className='door'>
+          <img
+            src={mainImage.src}
+            className='image'
+          ></img>
         </div>
         <div className='celebrate'>
           <div className='txt'>We're getting married</div>

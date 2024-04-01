@@ -2,7 +2,7 @@ import './styles.scss';
 
 const Greeting = () => {
   return (
-    <div className='sectionMg introLayer'>
+    <div className='sectionMg'>
       <div className='sectionHead'>
         <div className='enstr'>INVITATION</div>
         <span className='name'>
