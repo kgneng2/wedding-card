@@ -1,9 +1,10 @@
 .contact {
-  font-size: 1.1rem;
+  text-align: center;
+  font-size: 16px;
   line-height: 2;
   padding: 20px 20px;
+  padding-top: 0px;
   color: #585858;
-
   font-weight: 400;
   line-height: 2;
 
@@ -19,14 +20,28 @@
       font-size: 1rem;
       text-align: center;
       line-height: 1.5;
-      box-sizing: border-box;
+      // box-sizing: border-box;
       border-radius: 14px;
       padding: 9px 10px;
       width: 170px;
       border: 1px solid #eee;
-      color: #c88989;
-      border-color: #c88989;
-      background: #fafafa;
+      color: #ffffff;
+      background: RGB(162, 211, 205, 0.8);
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(
+        0,
+        0,
+        0,
+        0.84
+      ); /* 어두운 배경 색상 및 투명도 조절 */
+      z-index: 999; /* 팝업보다 위에 위치하도록 설정 */
     }
 
     .popup {
@@ -42,58 +57,73 @@
 
       .content {
         /* 팝업의 스타일 설정 */
-        background-color: rgb(14, 14, 14, 0.8);
-        width: 300px;
-        height: 390px;
+        background-color: rgb(255, 255, 255);
+        width: 250px;
+        height: 340px;
         border-radius: 10px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 그림자 효과 추가 */
-        color: #fafafa;
-        padding-left: 20px;
-        padding-right: 20px;
-        padding-top: 20px;
-        
+        color: #363636;
+        padding: 20px;
+        font-size: 16px;
 
         .groom {
           .text {
-            display: grid;
-            gap: 12px;
-            grid-template-columns: repeat(3, 1fr);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            // grid-template-columns: repeat(3, 1fr);
             margin: 8px 7px;
             align-items: center;
-            text-align: left;
-
+            
+            .ddd {
+              color: rgba(4, 138, 53, 0.834);
+              font-family: 'Noto Sans';
+            }
+            .dda {
+              color: rgba(195, 153, 3, 0.939);
+              font-family: 'Noto Sans';
+            }
+            
             .icons {
-              display: inline-flex;
-              margin-left: 20px;
+              // display: inline-flex;
+              margin-left: auto;
+
+              // margin-left: 20px;
               // justify-content: space-between;
             }
-            .blank {
-              margin: 15px;
-            }
+
+            // .blank {
+            //   margin: 10px;
+            // }
 
             .name {
+              color: rgba(0, 0, 0);
+              opacity: 1;
               text-align: center;
+              font-family: 'AritaBuri';
+            }
+
+            .two-letter {
+              letter-spacing: 5px;
             }
           }
         }
 
         .title {
           padding: 15px;
-          font-size: 1.2rem;
+          font-size: 15px;
           letter-spacing: 3px;
           line-height: 20px;
-          color: #c88989;
+          color: #000000;
           -webkit-text-stroke: 0 !important;
         }
 
         .line {
           border: none; /* 기본 수평선 삭제 */
-          border-top: 1px solid rgb(81, 77, 77); /* 원하는 두께와 색상으로 선을 추가 */
+          border-top: 1px solid #e8e8e896; /* 원하는 두께와 색상으로 선을 추가 */
         }
 
         .close-btn {
-          padding-top: 10px;
-          top: 0;
           cursor: pointer;
         }
       }
