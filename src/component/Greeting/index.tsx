@@ -5,7 +5,7 @@ const Greeting = () => {
     <div className='sectionMg'>
       <div className='sectionHead'>
         <div className='enstr'>INVITATION</div>
-        <span className='name'>
+        <span className='ment'>
           <strong>소중한 분들을 초대합니다</strong>
         </span>
       </div>
