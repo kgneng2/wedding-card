@@ -19,14 +19,29 @@ const ShowMeTheMoney = () => {
     {
       level: '신 랑',
       name: '강준영',
-      bank: '신한은행',
-      number: '110-453-276211',
+      bank: '카뱅',
+      number: '3333-27-5790807',
     },
     {
       level: '혼 주',
       name: '강병재',
-      bank: '농협은행',
+      bank: '농협',
       number: '802-12-065873',
+    },
+  ];
+
+  const brideList = [
+    {
+      level: '신 부',
+      name: '최산하',
+      bank: '하나',
+      number: '110-475-647691',
+    },
+    {
+      level: '혼 주',
+      name: '최용환',
+      bank: '농협',
+      number: '631-02-130422',
     },
   ];
 
@@ -46,7 +61,7 @@ const ShowMeTheMoney = () => {
         <div className='box'>
           <div className='bbb'>
             <button className='bb' onClick={toggleGroom}>
-              <div className='txt'>🤵🏻‍♂️ 신랑 측</div>
+              <div className='txt'>🤵🏻‍♂️ 신랑 측 마음 전하는 곳</div>
               <div className='status_bb'>
                 {groom ? <UpOutlined /> : <DownOutlined />}
               </div>
@@ -55,12 +70,12 @@ const ShowMeTheMoney = () => {
           </div>
           <div className='bbb'>
             <button className='bb' onClick={toggleBride}>
-              <div className='txt'>👰🏻‍♀️ 신부 측</div>
+              <div className='txt'>👰🏻‍♀️ 신부 측 마음 전하는 곳</div>
               <div className='status_bb'>
                 {bride ? <UpOutlined /> : <DownOutlined />}
               </div>
             </button>
-            {bride && <AccountInfo items={groomList} />}
+            {bride && <AccountInfo items={brideList} />}
           </div>
         </div>
       </div>

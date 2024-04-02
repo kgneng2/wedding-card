@@ -37,8 +37,8 @@ const Account = ({ level, name, bank, number }: IProps) => {
 
   return (
     <div className='accounts'>
-      <small> {level} </small>
-      <b className='name'> {name} </b>
+      <span className='level'> {level} </span>
+      <span className='name'> {name} </span>
       {level == '신 랑' ? (
         <span
           className='number'

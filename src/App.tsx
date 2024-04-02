@@ -17,6 +17,7 @@ import Lottie from 'react-lottie';
 import Information from './component/Information';
 import { ConfigProvider } from 'antd';
 import ShowMeTheMoney from 'src/component/ShowMeTheMoney';
+import GuestbookPage from 'src/component/GuestBook';
 
 const Opening: React.FC<{
   text: string;
@@ -100,6 +101,7 @@ function App() {
           <Location />
           <Information />
           <ShowMeTheMoney />
+          <GuestbookPage />
           {/* <Attendance /> */}
         </div>
       )}

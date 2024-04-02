@@ -46,13 +46,15 @@
         padding-left: 20px;
         padding-right: 0px;
 
-        width: 300px;
+        width: 330px;
         border: 1px solid #eee;
         color: #7a7a7a;
         background: RGB(162, 211, 205, 0.6);
 
         .txt {
-          padding-right: 179px;
+          font-family: 'AritaBuri';
+
+          padding-right: 100px;
         }
 
         .status_bb {
@@ -63,22 +65,32 @@
       .accountInfo {
         border-radius: 10px;
         border: 1px solid #ededed;
-        width: 299px; /* 최대 너비를 170px로 설정합니다. */
-        
+        width: 329px; /* 최대 너비를 170px로 설정합니다. */
+
         .accounts {
+          font-family: sans-serif;
           display: flex;
           border: 1px solid #ededed;
-          padding: 20px 30px;
+          padding: 15px 20px;
 
+          .level {
+            font-size: 15px;
+            vertical-align: baseline;
+            color: rgba(45, 45, 45, 0.7);
+          }
           .name {
-            padding-left: 5px;
-            font-size: 14px;
+            // font-weight: 1000;
+            padding-left: 7px;
+            padding-right: 20px;
+            font-size: 15px;
+            display: inline-block;
+            vertical-align: baseline;
           }
 
           .number {
             padding-left: 10px;
             padding-right: 5px;
-            font-size: 11px;
+            font-size: 15px;
             text-align: right;
           }
 
@@ -88,7 +100,6 @@
             // border-radius: 30px;
             width: 30px;
             height: 30px;
-
           }
         }
       }
