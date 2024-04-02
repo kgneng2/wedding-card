@@ -1,7 +1,7 @@
 .information {
   padding: 40px 0 !important;
   background-color: #ffffff;
-
+  
   .header {
     padding: 10px 0;
     text-align: center;
@@ -9,11 +9,12 @@
 
     .title {
       color: #a2d3cd;
-      font-family: serif;
       text-transform: uppercase;
-      text-align: center;
-      letter-spacing: 0.2em;
-      margin-bottom: 15px;
+      font-size: 1.2rem;
+      letter-spacing: 3px;
+      line-height: 25px;
+      font-weight: 700;
+      -webkit-text-stroke: 0 !important;
     }
 
     .sub-title {
@@ -49,8 +50,10 @@
   margin-right: 10px;
   padding: 10px;
   text-align: left;
+  font-family: AritaBuri;
 }
 
 .line {
-  padding: 4px ;
+  font-family: AritaBuri;
+  padding: 4px;
 }
