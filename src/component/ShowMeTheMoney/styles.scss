@@ -1,0 +1,96 @@
+.money {
+  text-align: center;
+  padding: 40px 0 !important;
+  font-family: 'AritaBuri';
+
+  .container {
+    .header {
+      .title {
+        color: #a2d3cd;
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        letter-spacing: 3px;
+        line-height: 25px;
+        font-weight: 700;
+        -webkit-text-stroke: 0 !important;
+        margin-bottom: 15px;
+      }
+    }
+    .body {
+      font-weight: 400;
+      font-size: 1rem;
+      color: #585858;
+      padding: 15px 33px;
+      line-height: 2;
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    .box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column; /* 수직으로 요소를 배치합니다. */
+
+      .bbb {
+        margin-bottom: 10px; /* 각 버튼 아래에 간격을 줍니다. */
+      }
+
+      .bb {
+        text-align: left;
+        display: flex;
+        font-size: 1rem;
+        line-height: 1.5;
+        border-radius: 10px;
+        padding: 9px;
+        padding-left: 20px;
+        padding-right: 0px;
+
+        width: 300px;
+        border: 1px solid #eee;
+        color: #7a7a7a;
+        background: RGB(162, 211, 205, 0.6);
+
+        .txt {
+          padding-right: 179px;
+        }
+
+        .status_bb {
+          align-items: right;
+        }
+      }
+
+      .accountInfo {
+        border-radius: 10px;
+        border: 1px solid #ededed;
+        width: 299px; /* 최대 너비를 170px로 설정합니다. */
+        
+        .accounts {
+          border: 1px solid #ededed;
+          padding: 20px 10px;
+          
+          .name {
+            padding-left: 5px;
+            font-size: 14px;
+          }
+
+          .number {
+            padding-left: 10px;
+            padding-right: 5px;
+            font-size: 11px;
+            text-align: right;
+          }
+
+          .payImg {
+            // padding-left: 5px;
+            padding-right: 5px;
+            // border-radius: 30px;
+            width: 30px;
+            height: 30px;
+
+          }
+        }
+      }
+    }
+  }
+}

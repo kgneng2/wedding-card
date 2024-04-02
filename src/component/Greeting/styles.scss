@@ -1,7 +1,5 @@
 .sectionMg {
   text-align: center;
-  // margin: 0 !important;
-  // padding: 10px 0 25px;
   padding: 40px 0 !important;
 
   font-family: 'AritaBuri';
@@ -17,21 +15,12 @@
       -webkit-text-stroke: 0 !important;
       margin-bottom: 15px;
     }
-
-    // .ment {
-    //   display: block;
-    //   font-size: 1.15rem;
-    //   // font-family: Crimson Pro, serif;
-    //   color: #a2d3cd;
-    //   letter-spacing: 0.5px;
-    //   line-height: 2;
-    // }
   }
 
   .introMent {
     font-family: 'AritaBuri';
     font-weight: 400;
-    font-size: 1.0rem;
+    font-size: 1rem;
     color: #585858;
     padding: 15px 33px;
     line-height: 2;
@@ -40,6 +29,14 @@
     }
   }
 }
+// .ment {
+//   display: block;
+//   font-size: 1.15rem;
+//   // font-family: Crimson Pro, serif;
+//   color: #a2d3cd;
+//   letter-spacing: 0.5px;
+//   line-height: 2;
+// }
 
 // .title_eng_writing .sectionHead .enstr {
 //   display: block;
