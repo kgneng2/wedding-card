@@ -18,7 +18,7 @@ const Gallery = () => {
       <div className='container'>
         <div className='header'>
           <div className='title'>GALLERY</div>
-          <div className='sub-title'>우리의 순간</div>
+          {/* <div className='sub-title'>우리의 순간</div> */}
         </div>
         <div className='body'>
           <Image.PreviewGroup>
