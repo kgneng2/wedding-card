@@ -23,16 +23,10 @@ const ShowMeTheMoney = () => {
       number: '110-453-276211',
     },
     {
-      level: '아버지',
+      level: '혼 주',
       name: '강병재',
       bank: '농협은행',
       number: '802-12-065873',
-    },
-    {
-      level: '어머니',
-      name: '임명희',
-      bank: '신한은행',
-      number: '110-143-685008',
     },
   ];
 

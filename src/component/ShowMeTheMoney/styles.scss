@@ -66,9 +66,10 @@
         width: 299px; /* 최대 너비를 170px로 설정합니다. */
         
         .accounts {
+          display: flex;
           border: 1px solid #ededed;
-          padding: 20px 10px;
-          
+          padding: 20px 30px;
+
           .name {
             padding-left: 5px;
             font-size: 14px;
