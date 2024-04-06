@@ -1,17 +1,14 @@
 import useDynamicBaseUrl from 'src/hook/useDynamicUrl';
 import './styles.scss';
+import { usePathname, useRouter } from 'next/navigation';
 
 const GNB = () => {
-  const data = useDynamicBaseUrl();
-
-  const onClick = () => {
-    window.location.href = data.baseUrl;
-  };
+  const { urlData, onClick } = useDynamicBaseUrl();
 
   return (
     <div className='navbar'>
       <div className='navItem' onClick={onClick}>
-        {data.text}
+        {urlData.text}
       </div>
     </div>
   );

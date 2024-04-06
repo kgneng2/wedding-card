@@ -1,28 +1,22 @@
 'use client';
-
 import React from 'react';
 import dynamic from 'next/dynamic';
 import '../App.scss';
 
 import Greeting from 'src/component/Greeting';
-
 const Contact = dynamic(() => import('../../component/Contact'), {
   ssr: false,
 });
-const Calendar  = dynamic(() => import('../../component/Calendar'), {
-  ssr: true,
-});
-
+import Calendar from 'src/component/Calendar';
 const Dday = dynamic(() => import('../../component/Dday'), { ssr: false });
-
 const Location = dynamic(() => import('../../component/Location'), {
   ssr: false,
 });
-const Information = dynamic(() => import('../../component/Information'), {
-  ssr: true,
-});
-
+import Information from 'src/component/Information';
 const ShowMeTheMoney = dynamic(() => import('../../component/ShowMeTheMoney'), {
+  ssr: false,
+});
+const Guestbook = dynamic(() => import('../../component/GuestBook'), {
   ssr: false,
 });
 
