@@ -19,7 +19,9 @@ export default function RootLayout({
         ></script>
       </head>
       <body>
-        <div id='root'>{children}</div>
+          {children}
+        {/* <div id='root'> */}
+          {/* </div> */}
       </body>
     </html>
   );

@@ -1,3 +1,4 @@
+"use client";
 import { useEffect, useState } from 'react';
 import './styles.scss';
 import { DownOutlined, UpOutlined } from '@ant-design/icons';

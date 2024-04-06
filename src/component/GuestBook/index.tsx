@@ -13,7 +13,7 @@ interface IData {
   date: string;
 }
 
-const GuestbookPage = () => {
+const Guestbook = () => {
   const [list, setList] = useState<IData[]>([
     {
       name: '개발자',
@@ -144,4 +144,4 @@ const GuestbookPage = () => {
   );
 };
 
-export default GuestbookPage;
+export default Guestbook;

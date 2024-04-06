@@ -1,23 +1,21 @@
-/* eslint-disable @typescript-eslint/no-redeclare */
-import Location from './component/Location';
-import Intro from './component/Intro';
-import Contact from './component/Contact';
-import Calendar from './component/Calendar';
-import Attendance from './component/Attendance';
-
+'use client';
+import Intro from '../component/Intro';
 import './App.scss';
-import Greeting from './component/Greeting';
-import Blank from './component/Blank';
-import Dday from './component/Dday';
-import Gallery from './component/Gallery';
+import Gallery from '../component/Gallery';
 import { useEffect, useState } from 'react';
 
-import heartAnimation from './animation/heart.json';
+import heartAnimation from '../animation/heart.json';
 import Lottie from 'react-lottie';
-import Information from './component/Information';
-import { ConfigProvider } from 'antd';
+
+import Contact from 'src/component/Contact';
+import Dday from 'src/component/Dday';
+import Greeting from 'src/component/Greeting';
+import Guestbook from 'src/component/GuestBook';
+import Information from 'src/component/Information';
 import ShowMeTheMoney from 'src/component/ShowMeTheMoney';
-import GuestbookPage from 'src/component/GuestBook';
+import Calendar from 'src/component/Calendar';
+import Location from 'src/component/Location';
+import GNB from 'src/component/GNB';
 
 const Opening: React.FC<{
   text: string;
@@ -69,20 +67,37 @@ function App() {
     setShowOpening(false);
   };
 
+  const tabArray = [
+    {
+      label: '갤러리 보기',
+      content: (
+        <>
+          <Intro />
+          <Gallery />
+        </>
+      ),
+      icon: '💍',
+    },
+    {
+      label: '예식 안내',
+      content: (
+        <>
+          <Greeting />
+          <Contact />
+          <Calendar />
+          <Dday />
+          <Location />
+          <Information />
+          <ShowMeTheMoney />
+          <Guestbook />
+        </>
+      ),
+      icon: '👰🏻‍♀️',
+    },
+  ];
+
   return (
-    <ConfigProvider
-      theme={{
-        components: {
-          Tabs: {
-            inkBarColor: '#305e30',
-            itemHoverColor: '#305e30',
-            itemSelectedColor: '#305e30',
-            titleFontSize: 15,
-            fontWeightStrong: 1,
-          },
-        },
-      }}
-    >
+    <>
       {showOpening && (
         <Opening
           text={'준영 산하 우리 이제 결혼합니다'}
@@ -90,22 +105,15 @@ function App() {
         />
       )}
       {!showOpening && (
-        <div className='app'>
-          <Intro />
-          <Blank />
-          <Greeting />
-          <Contact />
-          <Gallery />
-          <Calendar />
-          <Dday />
-          <Location />
-          <Information />
-          <ShowMeTheMoney />
-          <GuestbookPage />
-          {/* <Attendance /> */}
-        </div>
+        <>
+          <GNB />
+          <div className='app'>
+            <Intro />
+            <Gallery />
+          </div>
+        </>
       )}
-    </ConfigProvider>
+    </>
   );
 }
 

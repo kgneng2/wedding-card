@@ -1,7 +1,8 @@
 /* eslint-disable jsx-a11y/alt-text */
+'use client';
 import './styles.scss';
-import React, { useState } from 'react';
-import { Modal, Image, Button } from 'antd';
+import React from 'react';
+import { Image } from 'antd';
 import images from './imageList'; // 이미지 목록 가져오기
 
 const Gallery = () => {
