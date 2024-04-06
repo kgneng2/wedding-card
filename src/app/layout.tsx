@@ -19,9 +19,7 @@ export default function RootLayout({
         ></script>
       </head>
       <body>
-          {children}
-        {/* <div id='root'> */}
-          {/* </div> */}
+        <div id='root'>{children}</div>
       </body>
     </html>
   );

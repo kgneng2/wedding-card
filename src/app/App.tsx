@@ -1,4 +1,3 @@
-'use client';
 import Intro from '../component/Intro';
 import './App.scss';
 import Gallery from '../component/Gallery';
@@ -7,16 +6,8 @@ import { useEffect, useState } from 'react';
 import heartAnimation from '../animation/heart.json';
 import Lottie from 'react-lottie';
 
-import Contact from 'src/component/Contact';
-import Dday from 'src/component/Dday';
-import Greeting from 'src/component/Greeting';
 import Guestbook from 'src/component/GuestBook';
-import Information from 'src/component/Information';
-import ShowMeTheMoney from 'src/component/ShowMeTheMoney';
-import Calendar from 'src/component/Calendar';
-import Location from 'src/component/Location';
 import GNB from 'src/component/GNB';
-import Link from 'next/link';
 
 const Opening: React.FC<{
   text: string;
@@ -68,15 +59,6 @@ function App() {
     setShowOpening(false);
   };
 
-
-  const [currentPage, setCurrentPage] = useState(true);
-
-  const onClick = (e) => {
-    e.preventDefault();
-    setCurrentPage(!currentPage);
-    console.log(currentPage)
-  };
-
   return (
     <>
       {showOpening && (
@@ -87,24 +69,10 @@ function App() {
       )}
       {!showOpening && (
         <div className='app'>
-          <GNB currentPage={currentPage} onClick={onClick} />
-          {currentPage ? (
-            <>
-              <Intro />
-              <Gallery />
-            </>
-          ) : (
-            <>
-              <Greeting />
-              <Contact />
-              <Calendar />
-              <Dday />
-              <Location />
-              <Information />
-              <ShowMeTheMoney />
-              <Guestbook />
-            </>
-          )}
+          <GNB />
+          <Intro />
+          <Gallery />
+          <Guestbook />
         </div>
       )}
     </>

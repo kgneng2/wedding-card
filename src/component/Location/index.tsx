@@ -1,8 +1,7 @@
-/* eslint-disable jsx-a11y/alt-text */
-/* eslint-disable react/jsx-no-target-blank */
+
 import { useEffect } from 'react';
 import './styles.scss';
-import { Button, message } from 'antd';
+import { Button } from 'antd';
 
 import mapImg from '../../../public/images/map.png';
 import { CopyOutlined } from '@ant-design/icons';

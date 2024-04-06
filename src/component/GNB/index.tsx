@@ -1,12 +1,17 @@
-import Link from 'next/link';
+import useDynamicBaseUrl from 'src/hook/useDynamicUrl';
 import './styles.scss';
-import { useState } from 'react';
 
-const GNB = ({ currentPage, onClick }) => {
+const GNB = () => {
+  const data = useDynamicBaseUrl();
+
+  const onClick = () => {
+    window.location.href = data.baseUrl;
+  };
+
   return (
     <div className='navbar'>
       <div className='navItem' onClick={onClick}>
-        {currentPage ? '결혼식 안내 👰🏻‍♀️' : '갤러리 보기 💍'}
+        {data.text}
       </div>
     </div>
   );

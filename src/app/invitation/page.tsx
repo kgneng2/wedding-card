@@ -1,22 +1,28 @@
 'use client';
+
 import React from 'react';
 import dynamic from 'next/dynamic';
 import '../App.scss';
 
 import Greeting from 'src/component/Greeting';
+
 const Contact = dynamic(() => import('../../component/Contact'), {
   ssr: false,
 });
-import Calendar from 'src/component/Calendar';
+const Calendar  = dynamic(() => import('../../component/Calendar'), {
+  ssr: true,
+});
+
 const Dday = dynamic(() => import('../../component/Dday'), { ssr: false });
+
 const Location = dynamic(() => import('../../component/Location'), {
   ssr: false,
 });
-import Information from 'src/component/Information';
-const ShowMeTheMoney = dynamic(() => import('../../component/ShowMeTheMoney'), {
-  ssr: false,
+const Information = dynamic(() => import('../../component/Information'), {
+  ssr: true,
 });
-const Guestbook = dynamic(() => import('../../component/GuestBook'), {
+
+const ShowMeTheMoney = dynamic(() => import('../../component/ShowMeTheMoney'), {
   ssr: false,
 });
 
@@ -38,8 +44,8 @@ export default function Page() {
         },
       }}
     >
-      <GNB />
       <div className='app'>
+        <GNB />
         <Greeting />
         <Contact />
         <Calendar />
@@ -47,7 +53,6 @@ export default function Page() {
         <Location />
         <Information />
         <ShowMeTheMoney />
-        <Guestbook />
       </div>
     </ConfigProvider>
   );
