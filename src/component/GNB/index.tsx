@@ -1,6 +1,5 @@
 import useDynamicBaseUrl from 'src/hook/useDynamicUrl';
 import './styles.scss';
-import { usePathname, useRouter } from 'next/navigation';
 
 const GNB = () => {
   const { urlData, onClick } = useDynamicBaseUrl();

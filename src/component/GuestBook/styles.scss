@@ -3,11 +3,12 @@
   padding: 40px 0 !important;
   font-family: 'AritaBuri';
   height: 700px;
-  // margin-bottom: 100px;
+  margin-top: 20px;
+  margin-bottom: 50px;
 
   .header {
     margin-bottom: 20px;
-    
+
     .title {
       color: #a2d3cd;
       text-transform: uppercase;
@@ -30,9 +31,10 @@
     }
   }
 
-  .container { 
+  .container {
     text-align: left;
     padding: 0 10px !important;
+    margin-bottom: 30px;
   }
 }
 

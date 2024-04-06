@@ -69,8 +69,8 @@ function App() {
       )}
       {!showOpening && (
         <div className='app'>
-          <GNB />
           <Intro />
+          <GNB />
           <Gallery />
           <Guestbook />
         </div>

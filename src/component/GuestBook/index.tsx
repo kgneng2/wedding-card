@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import { useEffect, useState } from 'react';
 import { Avatar, Button, ConfigProvider, Layout, List, Skeleton } from 'antd';
 import './styles.scss';
@@ -21,6 +21,18 @@ const Guestbook = () => {
       content: `따듯한 말씀 감사합니다. created by junyoung.kang`,
       date: '2024-04-03',
     },
+    {
+      name: '개발자',
+      password: '1234',
+      content: `따듯한 말씀 감사합니다. created by junyoung.kang`,
+      date: '2024-04-03',
+    },
+    {
+      name: '개발자',
+      password: '1234',
+      content: `따듯한 말씀 감사합니다. created by junyoung.kang`,
+      date: '2024-04-03',
+    }
   ]);
 
   const [openForm, setOpenForm] = useState(false);

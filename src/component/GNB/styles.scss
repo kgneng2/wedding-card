@@ -4,11 +4,12 @@
 
   width: 100%;
   position: fixed;
-  z-index: 1000;
+  z-index: 100;
   bottom: 0; /* 화면의 최하단에 고정 */
   -webkit-font-smoothing: 'antialiased';
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+  
 
   .navItem {
     padding-top: 20px;
