@@ -1,5 +1,6 @@
+"use client";
 import { useState } from 'react';
-import { Form, Input, Button, ConfigProvider } from 'antd';
+import { Form, Input, Button } from 'antd';
 import { CloseOutlined, LockOutlined, UserOutlined } from '@ant-design/icons';
 
 const GuestBookForm = ({ onSubmit, toggleOpenForm }) => {

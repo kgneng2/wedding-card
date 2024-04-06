@@ -1,11 +1,10 @@
+"use client";
 import { useEffect, useState } from 'react';
 import { Avatar, Button, ConfigProvider, Layout, List, Skeleton } from 'antd';
 import './styles.scss';
 import GuestBookForm from 'src/component/GuestBook/guestBookForm';
 import { CloseOutlined } from '@ant-design/icons';
 // import guestbookAPI from '../lib/guestbookAPI';
-
-const { Header, Content } = Layout;
 
 interface IData {
   name: string;
@@ -17,12 +16,13 @@ interface IData {
 const GuestbookPage = () => {
   const [list, setList] = useState<IData[]>([
     {
-      name: '강준영',
+      name: '개발자',
       password: '1234',
-      content: 'asdflhdasnlkndasklfnasdlfndaslkfndsalnf las nfsdakfndsalknlk',
-      date: '2024-02-10',
+      content: `따듯한 말씀 감사합니다. created by junyoung.kang`,
+      date: '2024-04-03',
     },
   ]);
+
   const [openForm, setOpenForm] = useState(false);
 
   const [loading, setLoading] = useState(false);
@@ -30,6 +30,21 @@ const GuestbookPage = () => {
   const toggleOpenForm = () => {
     setOpenForm(!openForm);
   };
+
+  useEffect(() => {
+    if (openForm) {
+      // 팝업이 열렸을 때 body에 overflow: hidden 스타일 적용하여 스크롤 막기
+      document.body.style.overflow = 'hidden';
+    } else {
+      // 팝업이 닫혔을 때 body에 overflow: auto 스타일 적용하여 스크롤 활성화
+      document.body.style.overflow = 'auto';
+    }
+
+    // 컴포넌트가 unmount될 때 cleanup 수행
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [openForm]);
 
   //   useEffect(() => {
   //     const fetchGuestbook = async () => {
@@ -105,7 +120,7 @@ const GuestbookPage = () => {
                   }
                   title={
                     <div>
-                      From {item.name}{' '}
+                      From {item.name} 💬
                       <span
                         style={{
                           paddingLeft: 10,
