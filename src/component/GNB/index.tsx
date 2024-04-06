@@ -1,19 +1,13 @@
 import Link from 'next/link';
 import './styles.scss';
+import { useState } from 'react';
 
-const GNB = () => {
+const GNB = ({ currentPage, onClick }) => {
   return (
-    <div className='gnb'>
-      <nav className='navbar'>
-        <ul className='navList'>
-          <li className='navItem'>
-            <Link href='/'>갤러리 보기</Link>
-          </li>
-          <li className={'navItem'}>
-            <Link href='/invitation'>결혼식 안내</Link>
-          </li>
-        </ul>
-      </nav>
+    <div className='navbar'>
+      <div className='navItem' onClick={onClick}>
+        {currentPage ? '결혼식 안내 👰🏻‍♀️' : '갤러리 보기 💍'}
+      </div>
     </div>
   );
 };

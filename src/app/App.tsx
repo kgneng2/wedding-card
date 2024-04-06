@@ -16,6 +16,7 @@ import ShowMeTheMoney from 'src/component/ShowMeTheMoney';
 import Calendar from 'src/component/Calendar';
 import Location from 'src/component/Location';
 import GNB from 'src/component/GNB';
+import Link from 'next/link';
 
 const Opening: React.FC<{
   text: string;
@@ -67,34 +68,14 @@ function App() {
     setShowOpening(false);
   };
 
-  const tabArray = [
-    {
-      label: '갤러리 보기',
-      content: (
-        <>
-          <Intro />
-          <Gallery />
-        </>
-      ),
-      icon: '💍',
-    },
-    {
-      label: '예식 안내',
-      content: (
-        <>
-          <Greeting />
-          <Contact />
-          <Calendar />
-          <Dday />
-          <Location />
-          <Information />
-          <ShowMeTheMoney />
-          <Guestbook />
-        </>
-      ),
-      icon: '👰🏻‍♀️',
-    },
-  ];
+
+  const [currentPage, setCurrentPage] = useState(true);
+
+  const onClick = (e) => {
+    e.preventDefault();
+    setCurrentPage(!currentPage);
+    console.log(currentPage)
+  };
 
   return (
     <>
@@ -105,13 +86,26 @@ function App() {
         />
       )}
       {!showOpening && (
-        <>
-          <GNB />
-          <div className='app'>
-            <Intro />
-            <Gallery />
-          </div>
-        </>
+        <div className='app'>
+          <GNB currentPage={currentPage} onClick={onClick} />
+          {currentPage ? (
+            <>
+              <Intro />
+              <Gallery />
+            </>
+          ) : (
+            <>
+              <Greeting />
+              <Contact />
+              <Calendar />
+              <Dday />
+              <Location />
+              <Information />
+              <ShowMeTheMoney />
+              <Guestbook />
+            </>
+          )}
+        </div>
       )}
     </>
   );
