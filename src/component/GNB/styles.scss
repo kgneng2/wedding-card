@@ -1,5 +1,10 @@
+.gnb { 
+    background-color: #ffff;
+    height: 50px;
+}
+
 .navbar {
-  background-color: #a2d3cd;
+  background-color: #f7e8e8;
   position: fixed;
   width: 100%;
   top: 0;
@@ -9,6 +14,7 @@
   border-top-right-radius: 5px;
   padding-top: 15px;
   padding-bottom: 15px;
+  justify-content: space-between;
 }
 
 .navList {
@@ -22,11 +28,10 @@
 .navItem {
   flex-grow: 1; /* 각 항목이 남은 공간을 모두 차지하도록 설정 */
   max-width: 50%; /* 최대 너비 설정 */
-//   padding: 10px 0 !important;
 }
 
 .navItem a {
-  color: white;
+  color: rgb(0, 0, 0);
   text-decoration: none;
   transition: background-color 0.3s ease;
 }
