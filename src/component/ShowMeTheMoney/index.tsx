@@ -35,7 +35,7 @@ const ShowMeTheMoney = () => {
     {
       level: '신 부',
       name: '최산하',
-      bank: '하나',
+      bank: '신한',
       number: '110-475-647691',
     },
     {

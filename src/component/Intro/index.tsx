@@ -1,7 +1,11 @@
 import './styles.scss';
-import mainImage from '../../../public/images/main2.jpg';
+import main2 from '../../../public/images/main/main2.jpg';
+import main3 from '../../../public/images/main/main3.jpg';
+import { Carousel } from 'antd';
 
 const Intro = () => {
+  const doorImageList = [main2.src, main3.src];
+
   return (
     <>
       <div className='intro'>
@@ -17,10 +21,17 @@ const Intro = () => {
           </div>
         </div>
         <div className='door'>
-          <img
-            src={mainImage.src}
-            className='image'
-          ></img>
+          <Carousel
+            autoplay
+            fade={true}
+            effect='fade'
+            autoplaySpeed={2000}
+            dots={false}
+          >
+            {doorImageList.map((img) => {
+              return <img src={img} className='image'></img>;
+            })}
+          </Carousel>
         </div>
         <div className='celebrate'>
           <div className='txt'>We're Getting Married</div>
