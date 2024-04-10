@@ -12,7 +12,7 @@ const useDynamicBaseUrl = () => {
     if (currentPath === '/invitation') {
       return { baseUrl: '/', text: '💍 갤러리 보기' };
     }
-    return { baseUrl: '/invitation', text: '👰🏻‍♀️ 예식 안내' };
+    return { baseUrl: '/invitation', text: '👰🏻‍♀️ 예식 정보 보기' };
   };
 
   return {

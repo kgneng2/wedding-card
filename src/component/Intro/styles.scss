@@ -1,4 +1,3 @@
-@import url('https://webfontworld.github.io/amore/AritaBuri.css');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
 
 
@@ -35,7 +34,6 @@
     height: 200px;
 
     .name {
-      font-family: 'AritaBuri';
       display: block;
       padding-top: 0;
       font-size: 20px;
@@ -63,11 +61,11 @@
     .txt {
       display: block;
       font-family: roundhand;
-      font-size: 50px;
+      font-size: 90px;
       padding-bottom: 10px;
       margin-bottom: 10px;
       color: #6ed2c6; 
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
       font-weight: 700;
     }
 
@@ -80,7 +78,7 @@
     /* 화면 너비가 576px 이하일 때 */
     @media (max-width: 576px) {
       .txt {
-        font-size: 35px; /* 더 작은 텍스트 크기 설정 */
+        font-size: 38px; /* 더 작은 텍스트 크기 설정 */
       }
     }
 

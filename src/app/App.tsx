@@ -9,6 +9,7 @@ import Lottie from 'react-lottie';
 import Guestbook from 'src/component/GuestBook';
 import GNB from 'src/component/GNB';
 import Blank from 'src/component/Blank';
+import MoveInfo from 'src/component/MoveInfo';
 
 const Opening: React.FC<{
   text: string;
@@ -70,11 +71,14 @@ function App() {
       )}
       {!showOpening && (
         <div className='app'>
-          <Intro />
+          <Suspense>
+            <Intro />
+          </Suspense>
           <GNB />
           <Suspense>
             <Gallery />
           </Suspense>
+          <MoveInfo />
           <Suspense>
             <Guestbook />
           </Suspense>
