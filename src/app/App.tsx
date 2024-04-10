@@ -1,7 +1,7 @@
 import Intro from '../component/Intro';
 import './App.scss';
 import Gallery from '../component/Gallery';
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 
 import heartAnimation from '../animation/heart.json';
 import Lottie from 'react-lottie';
@@ -72,7 +72,9 @@ function App() {
           <Intro />
           <GNB />
           <Gallery />
-          <Guestbook />
+          <Suspense>
+            <Guestbook />
+          </Suspense>
         </div>
       )}
     </>

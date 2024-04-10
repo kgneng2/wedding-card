@@ -1,10 +1,9 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { FormEvent, useEffect, useState } from 'react';
 import { Avatar, Button, ConfigProvider, Layout, List, Skeleton } from 'antd';
 import './styles.scss';
 import GuestBookForm from 'src/component/GuestBook/guestBookForm';
 import { CloseOutlined } from '@ant-design/icons';
-// import guestbookAPI from '../lib/guestbookAPI';
 
 interface IData {
   name: string;
@@ -14,30 +13,13 @@ interface IData {
 }
 
 const Guestbook = () => {
-  const [list, setList] = useState<IData[]>([
-    {
-      name: '개발자',
-      password: '1234',
-      content: `따듯한 말씀 감사합니다. created by junyoung.kang`,
-      date: '2024-04-03',
-    },
-    {
-      name: '개발자',
-      password: '1234',
-      content: `따듯한 말씀 감사합니다. created by junyoung.kang`,
-      date: '2024-04-03',
-    },
-    {
-      name: '개발자',
-      password: '1234',
-      content: `따듯한 말씀 감사합니다. created by junyoung.kang`,
-      date: '2024-04-03',
-    }
-  ]);
+  const [list, setList] = useState<IData[]>([]);
 
   const [openForm, setOpenForm] = useState(false);
 
   const [loading, setLoading] = useState(false);
+
+  const [pageNumber, setPageNumber] = useState(1);
 
   const toggleOpenForm = () => {
     setOpenForm(!openForm);
@@ -58,19 +40,32 @@ const Guestbook = () => {
     };
   }, [openForm]);
 
-  //   useEffect(() => {
-  //     const fetchGuestbook = async () => {
-  //       const data = await guestbookAPI.fetchGuestbook();
-  //       setEntries(data.entries);
-  //     };
-  //     fetchGuestbook();
-  //   }, []);
+  useEffect(() => {
+    const fetchGuestbook = async () => {
+      const data = await fetch(`/api/guest-book/${pageNumber}`, {
+        method: 'GET',
+        headers: {
+          'content-type': 'application/json;charset=UTF-8',
+        },
+      });
 
-  //   const handleSubmit = async (guestName) => {
-  //     await guestbookAPI.addGuestbookEntry(guestName);
-  //     const updatedEntries = await guestbookAPI.fetchGuestbook();
-  //     setEntries(updatedEntries.entries);
-  //   };
+      const { name, password, content, date } = await data.json();
+
+      setList([...list, { name, password, content, date }]);
+    };
+    fetchGuestbook();
+  }, []);
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    fetch('/api/guest-book', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json;charset=UTF-8',
+      },
+      body: JSON.stringify({}),
+    });
+  };
 
   return (
     <ConfigProvider
@@ -103,7 +98,7 @@ const Guestbook = () => {
             <>
               <div className='overlay' onClick={toggleOpenForm}></div>
               <GuestBookForm
-                onSubmit={console.log}
+                onSubmit={handleSubmit}
                 toggleOpenForm={toggleOpenForm}
               />
             </>
