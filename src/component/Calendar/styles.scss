@@ -16,13 +16,15 @@
   margin: 10px 0;
 
   .sub-title {
-    margin-bottom: 15px;
+    text-transform: uppercase;
     font-size: 1.2rem;
+    // font-family: Crimson Pro, serif;
     letter-spacing: 3px;
     line-height: 25px;
-    color: #646464;
+    color: #a2d3cd;
     font-weight: 700;
     -webkit-text-stroke: 0 !important;
+    margin-bottom: 15px;
   }
 
   .date {
@@ -54,9 +56,10 @@
 
 .calendar-month {
   padding-bottom: 10px;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 500;
-  color: #3a3a3a;
+  color: #ffff;
+  // color: #3a3a3a;
 }
 
 .calendar-body {
@@ -66,7 +69,7 @@
 }
 
 .calendar-cell {
-  padding: 10px;
+  padding: 8px;
   text-align: center;
   color: #ffff;
   // border: 0px solid #1acb3a;
@@ -75,19 +78,16 @@
 .calendar-dday {
   background-color: #ffffff;
   background-size: cover;
-  padding: 10px;
-  text-align: center;
-  border: 0px solid #a94f4f;
   border-radius: 50%;
 }
 
 .calendar-sunday {
-  padding: 10px;
+  padding: 8px;
+  text-align: center;
   color: #3a3a3a;
 }
 
 .day-of-week {
   font-weight: bold;
-  border: 1px;
   font: sans-serif;
 }
