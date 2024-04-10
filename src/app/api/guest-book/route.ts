@@ -97,7 +97,7 @@ export async function DELETE(request: NextRequest) {
     }
     return NextResponse.json(
       { success: false, message: '비밀번호가 틀렸습니다.' },
-      { status: 200 }
+      { status: 400 }
     );
   } catch (error) {
     return NextResponse.json({ error }, { status: 500 });
