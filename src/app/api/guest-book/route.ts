@@ -46,11 +46,17 @@ export async function GET(request: NextRequest) {
     // const offset = (pageNumber - 1) * PAGE_SIZE;
     // const offset = 1;
 
+    //pagnation도 되는데. 일단은 나중에 진행하자. 최대 10개만 노출되도록 수정
     const result =
       await sql`select id, name, password, content, date from guestbooks order by date desc`;
 
     const data = result.rows;
     console.log(data);
+
+    if (data.length > 10) {
+      return NextResponse.json({ data: data.slice(0, 10) }, { status: 200 });
+    }
+
     return NextResponse.json({ data }, { status: 200 });
   } catch (error) {
     console.error(error);
@@ -77,11 +83,33 @@ export async function POST(request: Request) {
   return NextResponse.json({ data }, { status: 200 });
 }
 
-// export async function remove(request: Request) {
-//   try {
+export async function DELETE(request: NextRequest) {
+  try {
+    const searchParams = request.nextUrl.searchParams;
+    const id = searchParams.get('id');
+    const pw = searchParams.get('pw');
 
-//     return NextResponse.json({ }, { status: 200 });
-//   } catch(error) {
-//     return NextResponse.json({ error }, { status: 500 });
-//   }
-// }
+    if (!id || !pw) {
+      console.error(`"id, pw가 전송은 필수임 ${searchParams}`);
+      return NextResponse.json(
+        { success: false, message: '잘못된 요청입니다.' },
+        { status: 400 }
+      );
+    }
+    const data =
+      await sql`DELETE FROM guestbooks where id =${id} and password = ${pw}`;
+
+    if (data.rowCount === 1) {
+      return NextResponse.json(
+        { success: true, message: '삭제에 성공했습니다.' },
+        { status: 200 }
+      );
+    }
+    return NextResponse.json(
+      { success: false, message: '비밀번호가 틀렸습니다.' },
+      { status: 200 }
+    );
+  } catch (error) {
+    return NextResponse.json({ error }, { status: 500 });
+  }
+}
