@@ -9,17 +9,18 @@
   -webkit-font-smoothing: 'antialiased';
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  
 
   .navItem {
     padding-top: 20px;
     padding-bottom: 20px;
     border-top-left-radius: 40px 40px;
     border-top-right-radius: 40px 40px;
-    background-color: rgb(145, 167, 136);
+    background-color: #9ac6bf;
     // background-color: rgba(162, 211, 205, 0.5);
     text-align: center; /* 왼쪽 정렬 */
     flex-grow: 1; /* 각 항목이 남은 공간을 모두 차지하도록 설정 */
+    font-weight: 1000;
+    // font-size: 17px;
   }
 
   .navItem a {

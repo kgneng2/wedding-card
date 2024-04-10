@@ -47,9 +47,9 @@ const Location = () => {
         </div>
         <div id='map' className='map' />
         <div className='address'>
-          aT포레 웨딩홀 (5층)
-          <br />
           서울 서초구 강남대로 27 (양재동232번지)
+          <br />
+          aT포레 웨딩홀 5층
           <div className='navigation'>
             <Button className='btn' onClick={naviMapAction}>
               <img src={mapImg.src} width='20' height='20' />
@@ -66,8 +66,7 @@ const Location = () => {
           <div className='info-ti'> 자가용 🚗</div>
           <div className='info-txt'>
             네비게이션 : "AT센터" 검색 
-            <div className='indent'>· 경부고속도로 양재 IC 개포, 가락방향 진출 후 염곡사거리에서</div>
-            <div className='indent2'>좌회전 후 U턴 꽃시장 옆</div>
+            <div className='indent'>· 경부고속도로 양재 IC 개포, 가락방향 진출 후 염곡사거리에서 좌회전 후 U턴 꽃시장 옆</div>
           </div>
         </div>
         <div className='info-box'>
