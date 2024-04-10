@@ -94,7 +94,7 @@ const Guestbook = () => {
   };
 
   useEffect(() => {
-    fetchGuestbook(5);
+    fetchGuestbook(3);
   }, []);
 
   const handleSubmit = async (formData: FormData) => {
@@ -111,7 +111,7 @@ const Guestbook = () => {
 
       const { data } = await response.json();
 
-      setList(data.slice(0, 5));
+      setList(data.slice(0, 3));
     } catch (error) {
       console.error('Error submitting data:', error);
     } finally {
@@ -170,7 +170,12 @@ const Guestbook = () => {
           renderItem={(item, index) => (
             <List.Item
               actions={[
-                <CloseOutlined onClick={() => openModal(`${item.id}`)} />,
+                <CloseOutlined
+                  onClick={(e) => {
+                    e.preventDefault();
+                    openModal(`${item.id}`);
+                  }}
+                />,
               ]}
             >
               <Skeleton avatar title={false} loading={loading} active>
@@ -216,7 +221,10 @@ const Guestbook = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </Modal>
-        <Button style={{ width: 150, marginTop: 15 }} onClick={moreAction}> 더보기 </Button>
+        <Button style={{ width: 150, marginTop: 15 }} onClick={moreAction}>
+          {' '}
+          더보기{' '}
+        </Button>
       </div>
     </ConfigProvider>
   );

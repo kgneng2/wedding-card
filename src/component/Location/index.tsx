@@ -1,7 +1,7 @@
 
 import { useEffect } from 'react';
 import './styles.scss';
-import { Button } from 'antd';
+import { Button, message } from 'antd';
 
 import mapImg from '../../../public/images/map.png';
 import { CopyOutlined } from '@ant-design/icons';
@@ -34,7 +34,7 @@ const Location = () => {
 
     navigator.clipboard
       .writeText(addressText)
-      .then(() => alert('주소가 복사되었습니다.'))
+      .then(() => message.info('주소가 복사되었습니다.'))
       .catch((error) => console.error(error));
   };
 

@@ -4,18 +4,6 @@ import dayjs from 'dayjs';
 
 const PAGE_SIZE = 5;
 
-const getPageNumber = (page: string): number => {
-  try {
-    if (/^[0-9]+$/.test(page)) {
-      return +page;
-    }
-
-    return 1;
-  } catch {
-    return 1;
-  }
-};
-
 export const dynamic = 'force-dynamic';
 
 export async function GET(request: NextRequest) {

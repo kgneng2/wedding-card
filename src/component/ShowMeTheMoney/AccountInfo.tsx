@@ -1,6 +1,7 @@
 import { CopyOutlined } from '@ant-design/icons';
 import './styles.scss';
 import payImage from '../../../public/images/kakaopay.png';
+import { message } from 'antd';
 
 export interface IParentProps {
   items: Array<IProps>;
@@ -31,7 +32,7 @@ const Account = ({ level, name, bank, number }: IProps) => {
   const copyAction = (number) => {
     navigator.clipboard
       .writeText(number)
-      .then(() => alert('계좌번호가 복사되었습니다.'))
+      .then(() => message.success('계좌번호가 복사되었습니다.'))
       .catch((error) => console.error(error));
   };
 
