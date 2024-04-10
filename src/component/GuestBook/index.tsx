@@ -50,14 +50,16 @@ const Guestbook = () => {
       );
       const data = await response.json();
 
-      message.info(data.message);
-
       if (response.ok) {
+        message.success(data.message);
         setModalVisible(false); // 모달 닫기
         fetchGuestbook(); // 데이터 다시 불러오기
+      } else {
+        message.warning(data.message);
       }
+      
     } catch (error) {
-      message.error('삭제에 실패했습ㄴ디ㅏ');
+      message.error('삭제에 실패했습니다');
       console.error('Error submitting data:', error);
     }
   };

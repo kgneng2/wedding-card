@@ -34,7 +34,7 @@ const Location = () => {
 
     navigator.clipboard
       .writeText(addressText)
-      .then(() => message.info('주소가 복사되었습니다.'))
+      .then(() => message.success('주소가 복사되었습니다.'))
       .catch((error) => console.error(error));
   };
 
