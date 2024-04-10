@@ -1,11 +1,23 @@
 'use client';
 import { FormEvent, useEffect, useState } from 'react';
-import { Avatar, Button, ConfigProvider, Layout, List, Skeleton } from 'antd';
+import {
+  Avatar,
+  Button,
+  ConfigProvider,
+  Input,
+  List,
+  Modal,
+  Skeleton,
+  message,
+} from 'antd';
 import './styles.scss';
 import GuestBookForm from 'src/component/GuestBook/guestBookForm';
 import { CloseOutlined } from '@ant-design/icons';
+import useBlockScorll from 'src/hook/useBlockScroll';
+import dayjs from 'dayjs';
 
 interface IData {
+  id: number;
   name: string;
   password: string;
   content: string;
@@ -19,52 +31,96 @@ const Guestbook = () => {
 
   const [loading, setLoading] = useState(false);
 
-  const [pageNumber, setPageNumber] = useState(1);
+  const [modalVisible, setModalVisible] = useState(false);
+  const [password, setPassword] = useState('');
+  const [itemToDelete, setItemToDelete] = useState<string | null>(null);
+
+  const openModal = (itemId: string) => {
+    setItemToDelete(itemId);
+    setModalVisible(true);
+  };
+
+  const handleDelete = async () => {
+    try {
+      const response = await fetch(
+        `/api/guest-book?id=${itemToDelete}&pw=${password}`,
+        {
+          method: 'DELETE',
+        }
+      );
+      const data = await response.json();
+
+      message.info(data.message);
+
+      if (response.ok) {
+        setModalVisible(false); // 모달 닫기
+        fetchGuestbook(); // 데이터 다시 불러오기
+      }
+    } catch (error) {
+      message.error('삭제에 실패했습ㄴ디ㅏ');
+      console.error('Error submitting data:', error);
+    }
+  };
 
   const toggleOpenForm = () => {
     setOpenForm(!openForm);
   };
 
-  useEffect(() => {
-    if (openForm) {
-      // 팝업이 열렸을 때 body에 overflow: hidden 스타일 적용하여 스크롤 막기
-      document.body.style.overflow = 'hidden';
-    } else {
-      // 팝업이 닫혔을 때 body에 overflow: auto 스타일 적용하여 스크롤 활성화
-      document.body.style.overflow = 'auto';
-    }
+  useBlockScorll(openForm);
+  useBlockScorll(modalVisible);
 
-    // 컴포넌트가 unmount될 때 cleanup 수행
-    return () => {
-      document.body.style.overflow = 'auto';
-    };
-  }, [openForm]);
-
-  useEffect(() => {
-    const fetchGuestbook = async () => {
-      const data = await fetch(`/api/guest-book/${pageNumber}`, {
+  const fetchGuestbook = async (size?: number) => {
+    try {
+      setLoading(true); // 로딩 시작
+      const response = await fetch(`/api/guest-book`, {
         method: 'GET',
         headers: {
           'content-type': 'application/json;charset=UTF-8',
         },
       });
 
-      const { name, password, content, date } = await data.json();
+      const { data } = await response.json();
 
-      setList([...list, { name, password, content, date }]);
-    };
-    fetchGuestbook();
+      if (size) {
+        setList(data.slice(0, size));
+      } else {
+        setList(data);
+      }
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    } finally {
+      setLoading(false); // 로딩 종료
+    }
+  };
+
+  useEffect(() => {
+    fetchGuestbook(5);
   }, []);
 
-  const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault();
-    fetch('/api/guest-book', {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json;charset=UTF-8',
-      },
-      body: JSON.stringify({}),
-    });
+  const handleSubmit = async (formData: FormData) => {
+    try {
+      setLoading(true); // 로딩 시작
+      const response = await fetch('/api/guest-book', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to submit data');
+      }
+
+      const { data } = await response.json();
+
+      setList(data.slice(0, 5));
+    } catch (error) {
+      console.error('Error submitting data:', error);
+    } finally {
+      setLoading(false); // 로딩 종료
+    }
+  };
+
+  const moreAction = async () => {
+    fetchGuestbook(0);
   };
 
   return (
@@ -79,6 +135,9 @@ const Guestbook = () => {
             defaultBg: '#a2d3cd',
             defaultBorderColor: '#a2d3cd',
             defaultColor: '#ffff',
+            colorPrimaryBg: '#eeee',
+            primaryColor: '#ffff',
+            colorPrimary: '#aaaa',
             paddingInline: 20,
           },
         },
@@ -111,11 +170,7 @@ const Guestbook = () => {
           renderItem={(item, index) => (
             <List.Item
               actions={[
-                <CloseOutlined
-                  onClick={() => {
-                    console.log('삭제');
-                  }}
-                />,
+                <CloseOutlined onClick={() => openModal(`${item.id}`)} />,
               ]}
             >
               <Skeleton avatar title={false} loading={loading} active>
@@ -127,15 +182,19 @@ const Guestbook = () => {
                   }
                   title={
                     <div>
-                      From {item.name} 💬
+                      <span style={{ fontStyle: 'italic', fontSize: 13 }}>
+                        {' '}
+                        From{' '}
+                      </span>
+                      {item.name} 💬
                       <span
                         style={{
                           paddingLeft: 10,
-                          fontWeight: 200,
-                          fontSize: 12,
+                          fontWeight: 100,
+                          fontSize: 11,
                         }}
                       >
-                        {item.date}
+                        {dayjs(item.date).format('YYYY-MM-DD HH:mm:ss')}
                       </span>
                     </div>
                   }
@@ -145,7 +204,19 @@ const Guestbook = () => {
             </List.Item>
           )}
         />
-        <Button style={{ width: 150 }}> 더보기 </Button>
+        <Modal
+          title='비밀번호를 입력하세요'
+          open={modalVisible}
+          onCancel={() => setModalVisible(false)}
+          onOk={handleDelete}
+        >
+          <Input.Password
+            placeholder='비밀번호 입력'
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </Modal>
+        <Button style={{ width: 150, marginTop: 15 }} onClick={moreAction}> 더보기 </Button>
       </div>
     </ConfigProvider>
   );

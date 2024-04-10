@@ -1,17 +1,32 @@
-"use client";
-import { useState } from 'react';
+'use client';
+import { FormEvent, useState } from 'react';
 import { Form, Input, Button } from 'antd';
 import { CloseOutlined, LockOutlined, UserOutlined } from '@ant-design/icons';
 
-const GuestBookForm = ({ onSubmit, toggleOpenForm }) => {
-  const [username, setUserName] = useState('');
+interface GuestBookFormProps {
+  onSubmit: (formData: FormData) => void;
+  toggleOpenForm: () => void;
+}
+
+const GuestBookForm = ({ onSubmit, toggleOpenForm }: GuestBookFormProps) => {
+  const [userName, setUserName] = useState('');
   const [content, setContent] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    onSubmit(username);
+
+    const formData = new FormData();
+    formData.append('name', userName);
+    formData.append('password', password);
+    formData.append('content', content);
+
+    onSubmit(formData);
+
     setUserName('');
+    setPassword('');
+    setContent('');
+    toggleOpenForm();
   };
 
   const formItemLayout = {
@@ -34,19 +49,19 @@ const GuestBookForm = ({ onSubmit, toggleOpenForm }) => {
         />
         <Form variant='filled' onFinish={handleSubmit}>
           <Form.Item
-            label='이름'
+            label='이름 👤'
             name='username'
             rules={[{ required: true, message: '이름을 입력하세요' }]}
           >
             <Input
               prefix={<UserOutlined className='site-form-item-icon' />}
-              placeholder='Username'
-              value={username}
+              placeholder='UserName'
+              value={userName}
               onChange={(e) => setUserName(e.target.value)}
             />
           </Form.Item>
           <Form.Item
-            label='비밀번호'
+            label='비밀번호 🔑'
             name='password'
             rules={[{ required: true, message: '비밀번호를 입력하세요' }]}
           >
@@ -67,9 +82,7 @@ const GuestBookForm = ({ onSubmit, toggleOpenForm }) => {
             />
           </Form.Item>
           <Form.Item>
-            <Button htmlType='submit'>
-              축하 메시지 보내기
-            </Button>
+            <Button onClick={handleSubmit}>축하 메시지 보내기</Button>
           </Form.Item>
         </Form>
       </div>

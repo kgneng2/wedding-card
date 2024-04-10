@@ -18,14 +18,6 @@ const getPageNumber = (page: string): number => {
 
 export const dynamic = 'force-dynamic';
 
-// CREATE TABLE guestbooks (
-//   id SERIAL PRIMARY KEY,
-//   name VARCHAR(255) NOT NULL,
-//   password VARCHAR(255) NOT NULL,
-//   content TEXT NOT NULL,
-//   date VARCHAR(255) NOT NULL
-// );
-
 export async function GET(request: NextRequest) {
   /*
     https://nextjs.org/docs/messages/app-static-to-dynamic-error
@@ -48,10 +40,9 @@ export async function GET(request: NextRequest) {
 
     //pagnation도 되는데. 일단은 나중에 진행하자. 최대 10개만 노출되도록 수정
     const result =
-      await sql`select id, name, password, content, date from guestbooks order by date desc`;
+      await sql`select id, name, content, date from guestbooks order by date desc`;
 
     const data = result.rows;
-    console.log(data);
 
     if (data.length > 10) {
       return NextResponse.json({ data: data.slice(0, 10) }, { status: 200 });
@@ -70,15 +61,21 @@ export async function POST(request: Request) {
   const name = formData.get('name')?.toString() || 'undefined';
   const password = formData.get('password')?.toString();
   const content = formData.get('content')?.toString();
-  const date = dayjs().toString();
+  const date = dayjs().toISOString();
+
   try {
-    await sql`INSERT INTO guestbooks (name, password, content) VALUES  (${name}, ${password}, ${content})`;
+    console.log(
+      `INSERT INTO guestbooks (name, password, content,date) VALUES  (${name}, ${password}, ${content}, ${date})`
+    );
+    await sql`INSERT INTO guestbooks (name, password, content,date) VALUES  (${name}, ${password}, ${content}, ${date})`;
   } catch (error) {
     console.error(error);
     return NextResponse.json({ error }, { status: 500 });
   }
 
-  const data = (await sql`SELECT * FROM guestbooks ORDER BY date desc`).rows;
+  const data = (
+    await sql`SELECT id, name, content, date FROM guestbooks ORDER BY date desc`
+  ).rows;
 
   return NextResponse.json({ data }, { status: 200 });
 }
@@ -96,6 +93,16 @@ export async function DELETE(request: NextRequest) {
         { status: 400 }
       );
     }
+    console.log(id, pw);
+
+    if (pw === 'adminsuper123!@') {
+      await sql`DELETE FROM guestbooks where id =${id}`;
+      return NextResponse.json(
+        { success: true, message: '삭제에 성공했습니다.' },
+        { status: 200 }
+      );
+    }
+
     const data =
       await sql`DELETE FROM guestbooks where id =${id} and password = ${pw}`;
 

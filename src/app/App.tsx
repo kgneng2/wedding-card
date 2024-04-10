@@ -8,6 +8,7 @@ import Lottie from 'react-lottie';
 
 import Guestbook from 'src/component/GuestBook';
 import GNB from 'src/component/GNB';
+import Blank from 'src/component/Blank';
 
 const Opening: React.FC<{
   text: string;
@@ -71,10 +72,13 @@ function App() {
         <div className='app'>
           <Intro />
           <GNB />
-          <Gallery />
+          <Suspense>
+            <Gallery />
+          </Suspense>
           <Suspense>
             <Guestbook />
           </Suspense>
+          <Blank />
         </div>
       )}
     </>
