@@ -116,7 +116,7 @@ const Guestbook = () => {
       if (!response.ok) {
         message.error('방명록 작성에 실패했습니다.');
       }
-      
+
       message.success('방명록 작성이 성공했습니다.');
       
       const { data } = await response.json();

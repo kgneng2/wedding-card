@@ -4,7 +4,7 @@ import { Form, Input, Button } from 'antd';
 import { CloseOutlined, LockOutlined, UserOutlined } from '@ant-design/icons';
 
 interface GuestBookFormProps {
-  onSubmit: (formData: FormData) => void;
+  onSubmit: (data: any) => void;
   toggleOpenForm: () => void;
 }
 
