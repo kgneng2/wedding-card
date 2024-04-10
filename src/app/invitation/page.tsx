@@ -12,16 +12,18 @@ const Dday = dynamic(() => import('../../component/Dday'), { ssr: false });
 const Location = dynamic(() => import('../../component/Location'), {
   ssr: false,
 });
-import Information from 'src/component/Information';
-const ShowMeTheMoney = dynamic(() => import('../../component/ShowMeTheMoney'), {
+
+const Information = dynamic(() => import('../../component/Information'), {
   ssr: false,
 });
-const Guestbook = dynamic(() => import('../../component/GuestBook'), {
+
+const ShowMeTheMoney = dynamic(() => import('../../component/ShowMeTheMoney'), {
   ssr: false,
 });
 
 import { ConfigProvider } from 'antd';
 import GNB from 'src/component/GNB';
+import Blank from 'src/component/Blank';
 
 export default function Page() {
   return (
@@ -47,6 +49,7 @@ export default function Page() {
         <Location />
         <Information />
         <ShowMeTheMoney />
+        <Blank />
       </div>
     </ConfigProvider>
   );

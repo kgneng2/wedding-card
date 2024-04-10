@@ -54,18 +54,20 @@ const GuestBookForm = ({ onSubmit, toggleOpenForm }: GuestBookFormProps) => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </Form.Item>
-          <Form.Item label='전하실 말씀 💬' name='content'>
+          <Form.Item
+            label='전하실 말씀 💬'
+            name='content'
+            rules={[{ required: true, message: '내용을 입력해주세요' }]}
+          >
             <Input.TextArea
               style={{ height: 195 }}
               placeholder='결혼 축하합니다'
               value={content}
-              onChange={(e) => setContent(e.target.value || "결혼 축하합니다")}
+              onChange={(e) => setContent(e.target.value)}
             />
           </Form.Item>
           <Form.Item>
-            <Button  htmlType='submit'>
-              축하 메시지 보내기
-            </Button>
+            <Button htmlType='submit'>축하 메시지 보내기</Button>
           </Form.Item>
         </Form>
       </div>
