@@ -57,7 +57,6 @@ const Guestbook = () => {
       } else {
         message.warning(data.message);
       }
-      
     } catch (error) {
       message.error('삭제에 실패했습니다');
       console.error('Error submitting data:', error);
@@ -99,21 +98,31 @@ const Guestbook = () => {
     fetchGuestbook(3);
   }, []);
 
-  const handleSubmit = async (formData: FormData) => {
+  const handleSubmit = async (data: IData) => {
+    const { name, password, content } = data;
     try {
       setLoading(true); // 로딩 시작
+
+      const formData = new FormData();
+      formData.append('name', name);
+      formData.append('password', password);
+      formData.append('content', content);
+
       const response = await fetch('/api/guest-book', {
         method: 'POST',
         body: formData,
       });
 
       if (!response.ok) {
-        throw new Error('Failed to submit data');
+        message.error('방명록 작성에 실패했습니다.');
       }
-
+      
+      message.success('방명록 작성이 성공했습니다.');
+      
       const { data } = await response.json();
 
       setList(data.slice(0, 3));
+
     } catch (error) {
       console.error('Error submitting data:', error);
     } finally {
@@ -190,7 +199,6 @@ const Guestbook = () => {
                   title={
                     <div>
                       <span style={{ fontStyle: 'italic', fontSize: 13 }}>
-                        {' '}
                         From{' '}
                       </span>
                       {item.name} 💬

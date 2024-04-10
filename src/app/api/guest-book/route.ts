@@ -32,10 +32,6 @@ export async function GET(request: NextRequest) {
 
     const data = result.rows;
 
-    if (data.length > 10) {
-      return NextResponse.json({ data: data.slice(0, 10) }, { status: 200 });
-    }
-
     return NextResponse.json({ data }, { status: 200 });
   } catch (error) {
     console.error(error);
@@ -43,8 +39,7 @@ export async function GET(request: NextRequest) {
   }
 }
 
-export async function POST(request: Request) {
-  console.log('1234');
+export async function POST(request: NextRequest) {
   const formData = await request.formData();
   const name = formData.get('name')?.toString() || 'undefined';
   const password = formData.get('password')?.toString();

@@ -9,35 +9,16 @@ interface GuestBookFormProps {
 }
 
 const GuestBookForm = ({ onSubmit, toggleOpenForm }: GuestBookFormProps) => {
-  const [userName, setUserName] = useState('');
+  const [name, setName] = useState('');
   const [content, setContent] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleSubmit = (e: FormEvent) => {
-    e.preventDefault();
-
-    const formData = new FormData();
-    formData.append('name', userName);
-    formData.append('password', password);
-    formData.append('content', content);
-
+  const handleSubmit = (formData: FormData) => {
     onSubmit(formData);
-
-    setUserName('');
+    setName('');
     setPassword('');
     setContent('');
     toggleOpenForm();
-  };
-
-  const formItemLayout = {
-    labelCol: {
-      xs: { span: 24 },
-      sm: { span: 6 },
-    },
-    wrapperCol: {
-      xs: { span: 24 },
-      sm: { span: 14 },
-    },
   };
 
   return (
@@ -47,17 +28,17 @@ const GuestBookForm = ({ onSubmit, toggleOpenForm }: GuestBookFormProps) => {
           onClick={toggleOpenForm}
           style={{ paddingLeft: '220px' }}
         />
-        <Form variant='filled' onFinish={handleSubmit}>
+        <Form onFinish={handleSubmit}>
           <Form.Item
             label='이름 👤'
-            name='username'
+            name='name'
             rules={[{ required: true, message: '이름을 입력하세요' }]}
           >
             <Input
               prefix={<UserOutlined className='site-form-item-icon' />}
               placeholder='UserName'
-              value={userName}
-              onChange={(e) => setUserName(e.target.value)}
+              value={name}
+              onChange={(e) => setName(e.target.value)}
             />
           </Form.Item>
           <Form.Item
@@ -78,11 +59,13 @@ const GuestBookForm = ({ onSubmit, toggleOpenForm }: GuestBookFormProps) => {
               style={{ height: 195 }}
               placeholder='결혼 축하합니다'
               value={content}
-              onChange={(e) => setContent(e.target.value)}
+              onChange={(e) => setContent(e.target.value || "결혼 축하합니다")}
             />
           </Form.Item>
           <Form.Item>
-            <Button onClick={handleSubmit}>축하 메시지 보내기</Button>
+            <Button  htmlType='submit'>
+              축하 메시지 보내기
+            </Button>
           </Form.Item>
         </Form>
       </div>
