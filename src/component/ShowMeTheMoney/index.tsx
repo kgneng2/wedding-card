@@ -29,6 +29,12 @@ const ShowMeTheMoney = () => {
       bank: '농협',
       number: '802-12-065873',
     },
+    {
+      level: '혼 주',
+      name: '임명희',
+      bank: '신한',
+      number: '110-143-685008',
+    },
   ];
 
   const brideList = [
@@ -62,7 +68,7 @@ const ShowMeTheMoney = () => {
         <div className='box'>
           <div className='bbb'>
             <button className='bb' onClick={toggleGroom}>
-              <div className='txt'>🤵🏻‍♂️ 신랑 측 마음 전하는 곳</div>
+              <div className='txt'>🤵🏻‍♂️ 신랑측 마음 전하는 곳</div>
               <div className='status_bb'>
                 {groom ? <UpOutlined /> : <DownOutlined />}
               </div>
@@ -71,7 +77,7 @@ const ShowMeTheMoney = () => {
           </div>
           <div className='bbb'>
             <button className='bb' onClick={toggleBride}>
-              <div className='txt'>👰🏻‍♀️ 신부 측 마음 전하는 곳</div>
+              <div className='txt'>👰🏻‍♀️ 신부측 마음 전하는 곳</div>
               <div className='status_bb'>
                 {bride ? <UpOutlined /> : <DownOutlined />}
               </div>

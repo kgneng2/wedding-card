@@ -16,10 +16,10 @@ const Information = () => {
       content: (
         <div className='tab'>
           <img src={hallImg.src} width='100%'></img>
-          <div className='line'>😃 본식은 5층에서 12시 30분에 진행합니다</div>
+          <div className='line'>😃 본식은 5층에서 12시 30분에 진행합니다.</div>
           <div className='line'>
             😃 당일 단독홀로 오랜만에 만난 가족, 지인 분들과 여유있는 시간
-            보내시길 소망합니다
+            보내시길 소망합니다.
           </div>
         </div>
       ),
