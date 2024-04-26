@@ -11,6 +11,8 @@ import GNB from 'src/component/GNB';
 import Blank from 'src/component/Blank';
 import MoveInfo from 'src/component/MoveInfo';
 
+import { VisitedProvider, useVisited } from 'src/context/VisitedContext';
+
 const Opening: React.FC<{
   text: string;
   onFinish: () => void;
@@ -53,23 +55,27 @@ const Opening: React.FC<{
 };
 
 function App() {
-  // const [showOpening, setShowOpening] = useState<Boolean>(false); // 여기 바꿔야됨.
-  const [showOpening, setShowOpening] = useState<Boolean>(true);
+  const { visited, setVisited } = useVisited();
 
   const handleFinishTyping = () => {
     // 타이핑 효과가 끝나면 해당 컴포넌트를 사라지게 함
-    setShowOpening(false);
+    setVisited(true);
+    console.log('vis', visited);
   };
 
+  useEffect(() => {
+    console.log('dd', visited);
+  }, [visited]);
+
   return (
-    <>
-      {showOpening && (
+    <VisitedProvider>
+      {!visited && (
         <Opening
           text={'준영 산하 우리 이제 결혼합니다'}
           onFinish={handleFinishTyping}
         />
       )}
-      {!showOpening && (
+      {visited && (
         <div className='app'>
           <Suspense>
             <Intro />
@@ -85,7 +91,7 @@ function App() {
           <Blank />
         </div>
       )}
-    </>
+    </VisitedProvider>
   );
 }
 
