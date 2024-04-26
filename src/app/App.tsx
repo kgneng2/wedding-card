@@ -11,8 +11,6 @@ import GNB from 'src/component/GNB';
 import Blank from 'src/component/Blank';
 import MoveInfo from 'src/component/MoveInfo';
 
-import { VisitedProvider, useVisited } from 'src/context/VisitedContext';
-
 const Opening: React.FC<{
   text: string;
   onFinish: () => void;
@@ -55,27 +53,31 @@ const Opening: React.FC<{
 };
 
 function App() {
-  const { visited, setVisited } = useVisited();
+  const [visited, setVisited] = useState<boolean>(
+    sessionStorage.getItem('visited') === 'true'
+  );
 
-  const handleFinishTyping = () => {
-    // 타이핑 효과가 끝나면 해당 컴포넌트를 사라지게 함
+  const handleFinishTyping = async () => {
     setVisited(true);
-    console.log('vis', visited);
   };
 
   useEffect(() => {
-    console.log('dd', visited);
-  }, [visited]);
+    const isVisited = sessionStorage.getItem('visited');
+    setVisited(isVisited === 'true');
+
+    if (isVisited) {
+      console.log('방문했을때');
+    } else {
+      console.log('방문을 안했을때');
+      setTimeout(() => {
+        sessionStorage.setItem('visited', 'true');
+      }, 5000);
+    }
+  }, []);
 
   return (
-    <VisitedProvider>
-      {!visited && (
-        <Opening
-          text={'준영 산하 우리 이제 결혼합니다'}
-          onFinish={handleFinishTyping}
-        />
-      )}
-      {visited && (
+    <>
+      {visited ? (
         <div className='app'>
           <Suspense>
             <Intro />
@@ -90,8 +92,13 @@ function App() {
           </Suspense>
           <Blank />
         </div>
+      ) : (
+        <Opening
+          text={'준영 산하 우리 이제 결혼합니다'}
+          onFinish={handleFinishTyping}
+        />
       )}
-    </VisitedProvider>
+    </>
   );
 }
 
