@@ -9,8 +9,8 @@ import { Carousel } from 'antd';
 const Intro = () => {
   const doorImageList = [
     main1.src, 
-    // main2.src, 
-    // main3.src,
+    main2.src, 
+    main3.src,
      main4.src, main5.src];
 
   return (

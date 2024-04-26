@@ -21,6 +21,10 @@ const ShowMeTheMoney = dynamic(() => import('../../component/ShowMeTheMoney'), {
   ssr: false,
 });
 
+const Bye = dynamic(() => import('../../component/Bye'), {
+  ssr: true,
+});
+
 import { ConfigProvider } from 'antd';
 import GNB from 'src/component/GNB';
 import Blank from 'src/component/Blank';
@@ -49,6 +53,7 @@ export default function Page() {
         <Location />
         <Information />
         <ShowMeTheMoney />
+        <Bye />
         <Blank />
       </div>
     </ConfigProvider>
