@@ -4,6 +4,7 @@ import Gallery from '../component/Gallery';
 import { Suspense, useEffect, useState } from 'react';
 
 import heartAnimation from '../animation/heart.json';
+import developingAnimation from '../animation/developing.json';
 import Lottie from 'react-lottie';
 
 import Guestbook from 'src/component/GuestBook';
@@ -34,7 +35,7 @@ const Opening: React.FC<{
   const defaultOptions = {
     loop: true,
     autoplay: true,
-    animationData: heartAnimation,
+    animationData: developingAnimation,
     rendererSettings: {
       preserveAspectRatio: 'xMidYMid slice',
     },
@@ -58,14 +59,14 @@ function App() {
 
   const handleFinishTyping = () => {
     // 타이핑 효과가 끝나면 해당 컴포넌트를 사라지게 함
-    setShowOpening(false);
+    // setShowOpening(false);
   };
 
   return (
     <>
       {showOpening && (
         <Opening
-          text={'준영 산하 우리 이제 결혼합니다'}
+          text={'준영이가 열심히 개발 중입니다.'}
           onFinish={handleFinishTyping}
         />
       )}
