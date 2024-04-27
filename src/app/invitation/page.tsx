@@ -84,8 +84,8 @@ export default function Page() {
       </ConfigProvider>
       <div ref={pageRef.invitationRef}>
         <Invitation />
+        <Contact />
       </div>
-      <Contact />
       <div ref={pageRef.calendarRef}>
         <Calendar />
         <Dday />
