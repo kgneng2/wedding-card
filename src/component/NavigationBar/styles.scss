@@ -1,0 +1,13 @@
+.navi {
+  box-sizing: border-box;
+  height: 45px;
+
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  top: 0; /* 화면의 최하단에 고정 */
+  -webkit-font-smoothing: 'antialiased';
+  // border-top-left-radius: 5px;
+  // border-top-right-radius: 5px;
+  background-color: rgb(251, 251, 251);
+}

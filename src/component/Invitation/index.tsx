@@ -1,6 +1,6 @@
 import './styles.scss';
 
-const Greeting = () => {
+const Invitation = () => {
   return (
     <div className='sectionMg'>
       <div className='sectionHead'>
@@ -26,4 +26,4 @@ const Greeting = () => {
   );
 };
 
-export default Greeting;
+export default Invitation;

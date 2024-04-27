@@ -53,14 +53,12 @@ const Opening: React.FC<{
   );
 };
 
-
 function App() {
-
   const [visited, setVisited] = useState<boolean>(
     sessionStorage.getItem('visited') === 'true'
   );
 
-  const handleFinishTyping = async () => {
+  const handleFinishTyping = () => {
     setVisited(true);
   };
 
@@ -76,7 +74,7 @@ function App() {
   }, []);
 
   usePreventZoom();
-  
+
   return (
     <>
       {visited ? (
