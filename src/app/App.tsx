@@ -10,6 +10,7 @@ import Guestbook from 'src/component/GuestBook';
 import GNB from 'src/component/GNB';
 import Blank from 'src/component/Blank';
 import MoveInfo from 'src/component/MoveInfo';
+import usePreventZoom from 'src/hook/usePreventZoom';
 
 const Opening: React.FC<{
   text: string;
@@ -52,7 +53,9 @@ const Opening: React.FC<{
   );
 };
 
+
 function App() {
+
   const [visited, setVisited] = useState<boolean>(
     sessionStorage.getItem('visited') === 'true'
   );
@@ -75,6 +78,8 @@ function App() {
     }
   }, []);
 
+  usePreventZoom();
+  
   return (
     <>
       {visited ? (

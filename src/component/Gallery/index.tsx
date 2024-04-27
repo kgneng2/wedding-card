@@ -6,14 +6,6 @@ import { Image } from 'antd';
 import images from './imageList'; // 이미지 목록 가져오기
 
 const Gallery = () => {
-  // const [previewVisible, setPreviewVisible] = useState(false);
-  // const [previewImage, setPreviewImage] = useState('');
-
-  // const handlePreview = (imageSrc: any) => {
-  //   setPreviewImage(imageSrc);
-  //   setPreviewVisible(true);
-  // };
-
   return (
     <div className='gallery'>
       <div className='container'>

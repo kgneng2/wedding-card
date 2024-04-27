@@ -27,7 +27,9 @@ body {
 //여기전역변수 입력
 .app {
   text-align: 'center';
-
+.preventTouch {
+  touch-action: none;
+}
   // font-family: MaruBuri Regular, MaruBuri Regular Placeholder sans-serif;
   // font-family: 'NanumMyeongjo';
   // font-family: Avenir, Helvetica, Arial, sans-serif;
