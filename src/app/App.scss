@@ -14,13 +14,15 @@
   src: url('../../public/font/Arita-buriM.otf') format('woff');
 }
 
+// https://hangeul.naver.com/fonts/search?f=maru 마루 글씨체는 여기서 하면될듯? 
+
 html,
 body {
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
-  font-family: 'MaruBuri';
+  font-family: 'MaruBuriSemiBold';
   color: #585858;
 }
 
