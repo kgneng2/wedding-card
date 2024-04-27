@@ -68,10 +68,7 @@ function App() {
     const isVisited = sessionStorage.getItem('visited');
     setVisited(isVisited === 'true');
 
-    if (isVisited) {
-      console.log('방문했을때');
-    } else {
-      console.log('방문을 안했을때');
+    if (!isVisited) {
       setTimeout(() => {
         sessionStorage.setItem('visited', 'true');
       }, 5000);

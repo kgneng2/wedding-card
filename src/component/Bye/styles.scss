@@ -1,11 +1,22 @@
 .bye {
-  margin-bottom: 40px;
-  background-image: url('../../../public/images/main/main2.jpg');
-  background-size: 100%; /* 이미지를 요소의 크기에 맞게 확대/축소합니다 */
-  background-position: center; /* 이미지를 가운데 정렬합니다 */
-}
-
-.image {
   width: 100%;
-  height: auto;
+  height: 500px;
+  position: relative;
+  margin-bottom: 40px;
+  background-image: linear-gradient(
+      to top,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0) 40%
+    ),
+    url('../../../public/images/main/main2.jpg');
+  background-size: cover; /* 이미지를 요소에 맞게 확대/축소하고 잘림 없이 덮습니다 */
+
+  .text {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding-top: 230px;
+    top: 50%;
+    left: 50%;
+    font-size: 18px;
+  }
 }
