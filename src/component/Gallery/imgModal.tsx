@@ -31,6 +31,9 @@ const ImgModal = ({ selectedIndex, togglePopup }: IProps) => {
 
   return (
     <div className='imgPopup'>
+      <div className='close-btn'>
+        <CloseOutlined onClick={togglePopup} />
+      </div>
       <Swiper
         slidesPerView={1}
         loop={true}
@@ -50,14 +53,10 @@ const ImgModal = ({ selectedIndex, togglePopup }: IProps) => {
         freeMode={true}
         watchSlidesProgress={true}
         modules={[FreeMode, Navigation, Thumbs]}
-        
         className='mySwiper'
       >
         {imageRender}
       </Swiper>
-      <div className='close-btn'>
-        <CloseOutlined onClick={togglePopup} />
-      </div>
     </div>
   );
 };
