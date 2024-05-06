@@ -75,6 +75,8 @@ function App() {
 
   usePreventZoom();
 
+  const [isPopupOpen, setIsPopupOpen] = useState<boolean>(false);
+
   return (
     <>
       {visited ? (
@@ -82,9 +84,12 @@ function App() {
           <Suspense>
             <Intro />
           </Suspense>
-          <GNB />
+          {!isPopupOpen && <GNB />}
           <Suspense>
-            <Gallery />
+            <Gallery
+              isPopupOpen={isPopupOpen}
+              setIsPopupOpen={setIsPopupOpen}
+            />
           </Suspense>
           <MoveInfo />
           <Suspense>
