@@ -50,7 +50,7 @@ const Intro = () => {
             {/* <div className='separator'></div> */}
             <div className='address'>
               <p>양재 aT 포레</p>
-              <p>5층 단독홀</p>
+              <p>5층 그랜드홀</p>
             </div>
           </div>
         </div>

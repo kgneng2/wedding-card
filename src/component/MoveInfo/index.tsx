@@ -2,7 +2,7 @@ const MoveInfo = () => {
   return (
     <div
       style={{
-        padding: '15px',
+        padding: '30px',
         fontSize: '14px',
         textAlign: 'center',
         lineHeight: '23px',

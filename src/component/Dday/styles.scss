@@ -10,6 +10,7 @@ $primary-color: #a2d3cd;
 
   .remainTxt {
     display: grid;
+    
     grid-template-columns: repeat(4, 1fr);
     gap: 1px;
     padding-right: 60px;

@@ -159,7 +159,7 @@ const Guestbook = () => {
           <div className='title'>Guest Book</div>
           <div className='body'>
             신랑 & 신부의 행복한 앞날을 위해 <br />
-            따듯한 덕담 한 말씀 남겨주세요. <br />
+            따뜻한 덕담 한 말씀 남겨주세요. <br />
             소중한 추억으로 간직하겠습니다.
           </div>
 
