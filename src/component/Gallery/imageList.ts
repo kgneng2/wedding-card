@@ -9,11 +9,18 @@ import p8 from '../../../public/images/gallery/p8.jpg';
 import p9 from '../../../public/images/gallery/p9.jpg';
 import p10 from '../../../public/images/gallery/p10.jpg';
 import p11 from '../../../public/images/gallery/p11.jpg';
-import p12 from '../../../public/images/gallery/p12.jpeg';
+import p12 from '../../../public/images/gallery/p12.jpg';
 import p13 from '../../../public/images/gallery/p13.jpg';
 import p14 from '../../../public/images/gallery/p14.jpg';
 import p15 from '../../../public/images/gallery/p15.jpg';
 import p16 from '../../../public/images/gallery/p16.jpg';
+import p17 from '../../../public/images/gallery/p17.jpg';
+import p18 from '../../../public/images/gallery/p18.jpg';
+import p19 from '../../../public/images/gallery/p19.jpg';
+import p20 from '../../../public/images/gallery/p20.jpg';
+import p21 from '../../../public/images/gallery/p21.jpg';
+import p22 from '../../../public/images/gallery/p22.jpg';
+
 
 const images = [
   p1.src,
@@ -26,12 +33,18 @@ const images = [
   p8.src,
   p9.src,
   p10.src,
-  p11.src,
-  p12.src,
   p13.src,
+  p12.src,
   p14.src,
   p15.src,
+  p11.src,
   p16.src,
+  p17.src,
+  p18.src,
+  p19.src,
+  p20.src,
+  p21.src,
+  p22.src,
 
 ];
 
