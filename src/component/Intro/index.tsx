@@ -6,9 +6,11 @@ import main4 from '../../../public/images/main/main4.jpg';
 import main5 from '../../../public/images/main/main5.jpg';
 import main6 from '../../../public/images/main/main6.jpg';
 import { Carousel } from 'antd';
+import Image from 'next/image';
 
 const Intro = () => {
-  const doorImageList = [main1.src, main2.src, main3.src, main4.src, main6.src, main5.src];
+  // const doorImageList = [main1.src, main2.src, main3.src, main4.src, main6.src, main5.src];
+  const doorImageList = [main1, main2, main3, main4, main6, main5];
 
   return (
     <>
@@ -33,7 +35,8 @@ const Intro = () => {
             dots={false}
           >
             {doorImageList.map((img) => {
-              return <img src={img} className='image'></img>;
+              return <Image src={img} alt={'images'} layout='responsive'/>
+              // return <img src={img.src} className='image'></img>;
             })}
           </Carousel>
         </div>

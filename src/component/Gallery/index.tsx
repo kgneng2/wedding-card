@@ -3,8 +3,9 @@
 import './styles.scss';
 import React, { useEffect, useState } from 'react';
 import images from './imageList'; // 이미지 목록 가져오기
-import { Image } from 'antd';
+// import { Image } from 'antd';
 import ImgModal from 'src/component/Gallery/imgModal';
+import Image from 'next/image';
 
 const Gallery = ({ isPopupOpen, setIsPopupOpen }) => {
   const [selected, setSelected] = useState<number>();
@@ -37,10 +38,11 @@ const Gallery = ({ isPopupOpen, setIsPopupOpen }) => {
         <div className='body'>
           {images.map((image, index) => {
             return (
-              <img
-                key={`img-${index}`}
+              <Image
+                // key={`img-${index}`}
                 className='image'
                 src={image}
+                alt={`img-${index}`}
                 onClick={() => {
                   console.log('index: ', index, isPopupOpen);
                   setSelected(index);

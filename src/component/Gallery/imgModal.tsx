@@ -10,8 +10,8 @@ import 'swiper/css/navigation';
 import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
 
 import { useState } from 'react';
-import { Button } from 'antd';
 import { CloseOutlined } from '@ant-design/icons';
+import Image from 'next/image';
 
 interface IProps {
   selectedIndex: number;
@@ -24,7 +24,7 @@ const ImgModal = ({ selectedIndex, togglePopup }: IProps) => {
   const imageRender = images.map((item, index) => {
     return (
       <SwiperSlide key={`swiper-${index}}`}>
-        <img src={item}></img>
+        <Image src={item} alt={''} layout='responsive'></Image>
       </SwiperSlide>
     );
   });

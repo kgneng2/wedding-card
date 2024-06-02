@@ -4,6 +4,7 @@ import { Button, message } from 'antd';
 
 import mapImg from '../../../public/images/map.png';
 import { CopyOutlined } from '@ant-design/icons';
+import Image from 'next/image';
 
 const Location = () => {
   useEffect(() => {
@@ -51,7 +52,7 @@ const Location = () => {
           aT포레 웨딩홀 5층
           <div className='navigation'>
             <Button className='btn' onClick={naviMapAction}>
-              <img src={mapImg.src} width='20' height='20' />
+              <Image src={mapImg} width={20} height={20} alt={'mapimage'} />
               <span className='txt'>네이버</span>
               빠른길 찾기
             </Button>
