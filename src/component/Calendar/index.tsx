@@ -52,7 +52,7 @@ const Calendar = () => {
   };
 
   return (
-    <div className='calendar'>
+    <div id='calendar' className='calendar'>
       <div className='calendar-container'>
         <div className='calendar-header'>
           <div className='sub-title'> WEDDING DAY </div>

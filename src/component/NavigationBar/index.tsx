@@ -1,24 +1,27 @@
 import { Tabs } from 'antd';
 import './styles.scss';
 
-const NavigationBar: React.FC<{
-  onChange: React.Dispatch<React.SetStateAction<number>>;
-}> = ({ onChange }) => {
+const NavigationBar = ({ onChange }) => {
   const tabArray = [
     {
       label: '모시는 글',
+      id: 'invitation',
     },
     {
       label: '일정',
+      id: 'calendar',
     },
     {
       label: '오시는 길',
+      id: 'location',
     },
     {
       label: '예식 정보',
+      id: 'information',
     },
     {
       label: '마음 전하실 곳',
+      id: 'money',
     },
   ];
   return (
@@ -26,11 +29,11 @@ const NavigationBar: React.FC<{
       <Tabs
         className='tabss'
         centered
-        onChange={(key) => {
-          onChange(+key);
+        onChange={(id) => {
+          onChange(id);
         }}
         items={tabArray.map((data, i) => {
-          const id = String(i);
+          const id = data.id;
           return {
             label: data.label,
             key: id,

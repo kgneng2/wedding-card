@@ -53,7 +53,7 @@ const Information = () => {
   ];
 
   return (
-    <div className='information'>
+    <div id='information' className='information'>
       <div className='header'>
         <div className='title'>Information</div>
         <div className='sub-title'>안내 말씀 드립니다</div>

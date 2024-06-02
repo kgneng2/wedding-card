@@ -2,7 +2,7 @@ import './styles.scss';
 
 const Invitation = () => {
   return (
-    <div className='sectionMg'>
+    <div id='invitation' className='sectionMg'>
       <div className='sectionHead'>
         <div className='enstr'>INVITATION</div>
         {/* <span className='name'>

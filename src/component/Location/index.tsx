@@ -38,7 +38,7 @@ const Location = () => {
   };
 
   return (
-    <div className='location'>
+    <div id='location' className='location'>
       <div className='container'>
         <div className='header'>
           <h4 className='title'> Location </h4>

@@ -42,29 +42,14 @@ import GNB from 'src/component/GNB';
 import Blank from 'src/component/Blank';
 
 export default function Page() {
-  const focusRef = [
-    'invitationRef',
-    'calendarRef',
-    'locationRef',
-    'informationRef',
-    'moneyRef',
-  ];
 
-  const pageRef = {
-    invitationRef: useRef(null),
-    calendarRef: useRef(null),
-    locationRef: useRef(null),
-    informationRef: useRef(null),
-    moneyRef: useRef(null),
+  const scrollToDiv = (id: string) => {
+    const element = document.getElementById(id);
+
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
   };
-
-  const [focus, setFocus] = useState(1);
-
-  useEffect(() => {
-    // pageRef['invitationRef'].current?.scrollIntoView({ behavior: 'smooth' });
-    pageRef[focusRef[focus]].current?.scrollIntoView({ behavior: 'smooth' });
-
-  }, [focus]);
 
   return (
     <div className='app'>
@@ -80,19 +65,13 @@ export default function Page() {
           },
         }}
       >
-        <NavigationBar onChange={setFocus} />
+        <NavigationBar onChange={scrollToDiv} />
       </ConfigProvider>
-      <div ref={pageRef.invitationRef}>
-        <Invitation />
-        <Contact />
-      </div>
-      <div ref={pageRef.calendarRef}>
-        <Calendar />
-        <Dday />
-      </div>
-      <div ref={pageRef.locationRef}>
-        <Location />
-      </div>
+      <Invitation />
+      <Contact />
+      <Calendar />
+      <Dday />
+      <Location />
       <ConfigProvider
         theme={{
           components: {
@@ -105,13 +84,9 @@ export default function Page() {
           },
         }}
       >
-        <div ref={pageRef.informationRef}>
-          <Information />
-        </div>
+        <Information />
       </ConfigProvider>
-      <div ref = {pageRef.moneyRef} >
-        <ShowMeTheMoney />
-      </div>
+      <ShowMeTheMoney />
       <Bye />
       <Blank />
       <GNB />

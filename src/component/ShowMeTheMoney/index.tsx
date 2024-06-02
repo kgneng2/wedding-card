@@ -53,7 +53,7 @@ const ShowMeTheMoney = () => {
   ];
 
   return (
-    <div className='money'>
+    <div id='money' className='money'>
       <div className='container'>
         <div className='header'>
           <div className='title'> 마음을 전하실 곳 </div>
