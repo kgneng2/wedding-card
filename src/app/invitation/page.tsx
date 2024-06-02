@@ -42,7 +42,6 @@ import GNB from 'src/component/GNB';
 import Blank from 'src/component/Blank';
 
 export default function Page() {
-
   const scrollToDiv = (id: string) => {
     const element = document.getElementById(id);
 
@@ -60,6 +59,7 @@ export default function Page() {
               inkBarColor: '#a2d3cd',
               itemHoverColor: '#a2d3cd',
               itemSelectedColor: '#a2d3cd',
+              itemActiveColor: 'black',
               titleFontSize: 12,
             },
           },
@@ -79,6 +79,7 @@ export default function Page() {
               inkBarColor: '#a2d3cd',
               itemHoverColor: '#a2d3cd',
               itemSelectedColor: '#a2d3cd',
+              itemActiveColor: '#a2d3cd',
               titleFontSize: 14,
             },
           },

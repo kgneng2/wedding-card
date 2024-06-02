@@ -4,14 +4,11 @@ import main2 from '../../../public/images/main/main2.jpg';
 import main3 from '../../../public/images/main/main3.jpg';
 import main4 from '../../../public/images/main/main4.jpg';
 import main5 from '../../../public/images/main/main5.jpg';
+import main6 from '../../../public/images/main/main6.jpg';
 import { Carousel } from 'antd';
 
 const Intro = () => {
-  const doorImageList = [
-    main1.src, 
-    main2.src, 
-    main3.src,
-     main4.src, main5.src];
+  const doorImageList = [main1.src, main2.src, main3.src, main4.src, main6.src, main5.src];
 
   return (
     <>

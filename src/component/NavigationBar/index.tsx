@@ -1,5 +1,6 @@
 import { Tabs } from 'antd';
 import './styles.scss';
+import { useEffect, useState } from 'react';
 
 const NavigationBar = ({ onChange }) => {
   const tabArray = [
@@ -24,6 +25,31 @@ const NavigationBar = ({ onChange }) => {
       id: 'money',
     },
   ];
+
+  const [activeTab, setActiveTab] = useState('invitation');
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = tabArray.map((tab) => document.getElementById(tab.id));
+      let currentSectionId = 'invitation';
+
+      sections.forEach((section) => {
+        const rect = section!!.getBoundingClientRect();
+        if (rect.top <= 150 && rect.bottom >= 150) {
+          currentSectionId = section!!.id;
+        }
+      });
+
+      setActiveTab(currentSectionId);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [tabArray]);
+
   return (
     <div className='navi'>
       <Tabs
@@ -31,7 +57,11 @@ const NavigationBar = ({ onChange }) => {
         centered
         onChange={(id) => {
           onChange(id);
+          setTimeout(() => {
+            setActiveTab(id)
+          }, 1000)
         }}
+        activeKey={activeTab}
         items={tabArray.map((data, i) => {
           const id = data.id;
           return {
