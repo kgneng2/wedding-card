@@ -39,6 +39,27 @@ body {
   // -moz-osx-font-smoothing: grayscale; //이 속성은 모질라(Mozilla) 파이어폭스(Firefox) 브라우저에서 Mac OS X 운영체제에서 폰트 렌더링을 조정합니다. 이 옵션을 사용하면 글꼴의 안티앨리어싱을 그레이스케일(Greyscale)로 처리하여 폰트의 선명도를 조절할 수 있습니다.
 }
 
+// .opening {
+//   background-color: #c4bbe7;
+//   // background-color: rgba(162, 211, 205, 0.7);
+//   backdrop-filter: blur(5px);
+//   margin: 0;
+//   padding: 0;
+//   display: flex;
+//   justify-content: center; /* 수평 가운데 정렬 */
+//   align-items: center; /* 수직 가운데 정렬 */
+//   height: 100vh; // 뷰포트 높이를 화면에 꽉 차도록 설정
+
+//   .text {
+//     text-align: center; // 텍스트 가운데 정렬
+//     padding: 30px; // 텍스트 주위에 패딩 추가
+//     color: #3a3a3a; // 텍스트 색상 설정
+//     font-weight: 600;
+//     font-size: 20px;
+//   }
+// }
+
+
 .opening {
   // background-color: #ffffff;
   background-color: rgba(162, 211, 205, 0.7);
