@@ -55,24 +55,24 @@ const Opening: React.FC<{
 };
 
 function App() {
-  const [visited, setVisited] = useState<boolean>(
-    sessionStorage.getItem('visited') === 'true'
-  );
+  const [visited, setVisited] = useState<boolean>(false)
+    // sessionStorage.getItem('visited') === 'true'
+  // );
 
   const handleFinishTyping = () => {
     setVisited(true);
   };
 
-  useEffect(() => {
-    const isVisited = sessionStorage.getItem('visited');
-    setVisited(isVisited === 'true');
+  // useEffect(() => {
+  //   const isVisited = sessionStorage.getItem('visited');
+  //   setVisited(isVisited === 'true');
 
-    if (!isVisited) {
-      setTimeout(() => {
-        sessionStorage.setItem('visited', 'true');
-      }, 3000);
-    }
-  }, []);
+  //   if (!isVisited) {
+  //     setTimeout(() => {
+  //       sessionStorage.setItem('visited', 'true');
+  //     }, 3000);
+  //   }
+  // }, []);
 
   usePreventZoom();
 
