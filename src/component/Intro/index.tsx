@@ -6,10 +6,18 @@ import main4 from '../../../public/images/main/main4.jpg';
 import main6 from '../../../public/images/main/main6.jpg';
 import { Carousel } from 'antd';
 import Image from 'next/image';
+import { useEffect } from 'react';
 
 const Intro = () => {
-  // const doorImageList = [main1.src, main2.src, main3.src, main4.src, main6.src, main5.src];
   const doorImageList = [main1, main2, main3, main4, main6];
+
+  useEffect(() => {
+    // 이미지 프리로딩
+    doorImageList.forEach((img) => {
+      const imgElement = document.createElement('img');
+      imgElement.src = img.src;
+    });
+  }, []);
 
   return (
     <>
@@ -33,9 +41,9 @@ const Intro = () => {
             autoplaySpeed={2000}
             dots={false}
           >
-            {doorImageList.map((img) => {
-              return <Image className='image' src={img} alt={'images'} priority/>
-            })}
+            {doorImageList.map((img, index) => (
+              <Image key={index} className='image' src={img} alt={`${index}-images`} priority />
+            ))}
           </Carousel>
         </div>
         <div className='celebrate'>
