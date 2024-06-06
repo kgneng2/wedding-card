@@ -35,8 +35,11 @@ const NavigationBar = ({ onChange }) => {
 
       sections.forEach((section) => {
         const rect = section?.getBoundingClientRect();
-        if (rect!!.top <= 150 && rect!!.bottom >= 150) {
-          currentSectionId = section!!.id;
+
+        if (rect != undefined) {
+          if (rect!!.top <= 150 && rect!!.bottom >= 150) {
+            currentSectionId = section!!.id;
+          }
         }
       });
 
@@ -58,8 +61,8 @@ const NavigationBar = ({ onChange }) => {
         onChange={(id) => {
           onChange(id);
           setTimeout(() => {
-            setActiveTab(id)
-          }, 1300)
+            setActiveTab(id);
+          }, 1500);
         }}
         activeKey={activeTab}
         items={tabArray.map((data, i) => {

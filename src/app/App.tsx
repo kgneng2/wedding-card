@@ -70,7 +70,7 @@ function App() {
     if (!isVisited) {
       setTimeout(() => {
         sessionStorage.setItem('visited', 'true');
-      }, 5000);
+      }, 3000);
     }
   }, []);
 
@@ -100,7 +100,7 @@ function App() {
         </div>
       ) : (
         <Opening
-          text={'준영 산하 결혼합니다'}
+          text={'준영 산하 8월 25일 결혼합니다'}
           onFinish={handleFinishTyping}
         />
       )}
