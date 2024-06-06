@@ -53,7 +53,7 @@ const Opening: React.FC<{
   );
 };
 
-function App() {
+function App() { 
   const [visited, setVisited] = useState<boolean>(
     sessionStorage.getItem('visited') === 'true'
   );
