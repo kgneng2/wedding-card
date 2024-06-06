@@ -43,7 +43,7 @@ const Gallery = ({ isPopupOpen, setIsPopupOpen }) => {
                 className='image'
                 src={image}
                 alt={`img-${index}`}
-                loading='lazy'
+                priority
                 onClick={() => {
                   console.log('index: ', index, isPopupOpen);
                   setSelected(index);
