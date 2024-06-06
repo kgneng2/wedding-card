@@ -102,7 +102,7 @@ function App() {
 
   return (
     <>
-      {visited ? (
+      {/* {visited ? ( */}
         <div className='app'>
           <Suspense>
             <Intro />
@@ -118,12 +118,12 @@ function App() {
           <Guestbook />
           <Blank />
         </div>
-      ) : (
+      {/* ) : (
         <Opening
           text={'준영 산하 8월 25일 결혼합니다'}
           onFinish={handleFinishTyping}
         />
-      )}
+      )} */}
     </>
   );
 }
