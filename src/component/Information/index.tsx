@@ -16,10 +16,14 @@ const Information = () => {
       label: '예식안내',
       content: (
         <div className='tab'>
-          <Image src={hallImg} alt={'hallimage'} layout='responsive'></Image>
+          <Image
+            src={hallImg}
+            alt={'hallimage'}
+            style={{ width: '100%', height: 'auto' }}
+          ></Image>
           <div className='line'> 💍 본식은 5층에서 12시 30분에 진행합니다.</div>
           <div className='line'>
-             😊 당일 단독홀로 오랜만에 만난 가족, 지인 분들과 여유있는 시간
+            😊 당일 단독홀로 오랜만에 만난 가족, 지인 분들과 여유있는 시간
             보내시길 소망합니다.
           </div>
         </div>
@@ -29,7 +33,11 @@ const Information = () => {
       label: '식사안내',
       content: (
         <div className='tab'>
-          <Image src={banquetImg} alt={'식사안내'} layout='responsive'/>
+          <Image
+            src={banquetImg}
+            alt={'식사안내'}
+            style={{ width: '100%', height: 'auto' }}
+          />
           <div className='line'>🍚 지하 1층에 연회장이 준비 되어 있습니다.</div>
           <div className='line'>
             🥘 예식 시작 30분 전인 12시 부터 이용이 가능합니다.
@@ -45,9 +53,17 @@ const Information = () => {
       label: '신부대기실',
       content: (
         <div className='tab'>
-          <Image src={brideRoomImg} alt={'신부대기실'} layout='responsive'/>
-          <div className='line'>💐 신부대기실은 홀 반대편에 위치하고 있습니다.</div>
-          <div className='line'>👰 조금 일찍 방문하여 예쁜 신부에게 따뜻한 축하 한마디 부탁드립니다.</div>
+          <Image
+            src={brideRoomImg}
+            alt={'신부대기실'}
+            style={{ width: '100%', height: 'auto' }}
+          />
+          <div className='line'>
+            💐 신부대기실은 홀 반대편에 위치하고 있습니다.
+          </div>
+          <div className='line'>
+            👰 조금 일찍 방문하여 예쁜 신부에게 따뜻한 축하 한마디 부탁드립니다.
+          </div>
         </div>
       ),
     },

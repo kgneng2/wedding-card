@@ -39,10 +39,11 @@ const Gallery = ({ isPopupOpen, setIsPopupOpen }) => {
           {images.map((image, index) => {
             return (
               <Image
-                // key={`img-${index}`}
+                key={`img-${index}`}
                 className='image'
                 src={image}
                 alt={`img-${index}`}
+                loading='lazy'
                 onClick={() => {
                   console.log('index: ', index, isPopupOpen);
                   setSelected(index);
@@ -59,5 +60,5 @@ const Gallery = ({ isPopupOpen, setIsPopupOpen }) => {
     </div>
   );
 };
-
+// https://nextjs.org/docs/app/api-reference/components/image 찾아보고 해보기.. loading에 대해서 이미지로딩 가능해보임.
 export default Gallery;
