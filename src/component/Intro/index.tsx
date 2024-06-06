@@ -3,15 +3,13 @@ import main1 from '../../../public/images/main/main1.jpg';
 import main2 from '../../../public/images/main/main2.jpg';
 import main3 from '../../../public/images/main/main3.jpg';
 import main4 from '../../../public/images/main/main4.jpg';
-import main5 from '../../../public/images/main/main5.jpg';
+import main6 from '../../../public/images/main/main6.jpg';
 import { Carousel } from 'antd';
+import Image from 'next/image';
 
 const Intro = () => {
-  const doorImageList = [
-    main1.src, 
-    // main2.src, 
-    // main3.src,
-     main4.src, main5.src];
+  // const doorImageList = [main1.src, main2.src, main3.src, main4.src, main6.src, main5.src];
+  const doorImageList = [main1, main2, main3, main4, main6];
 
   return (
     <>
@@ -36,7 +34,7 @@ const Intro = () => {
             dots={false}
           >
             {doorImageList.map((img) => {
-              return <img src={img} className='image'></img>;
+              return <Image className='image' src={img} alt={'images'}/>
             })}
           </Carousel>
         </div>
@@ -50,7 +48,7 @@ const Intro = () => {
             {/* <div className='separator'></div> */}
             <div className='address'>
               <p>양재 aT 포레</p>
-              <p>5층 단독홀</p>
+              <p>5층 그랜드홀</p>
             </div>
           </div>
         </div>

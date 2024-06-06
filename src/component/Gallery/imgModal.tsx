@@ -1,33 +1,67 @@
-/* eslint-disable jsx-a11y/alt-text */
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 import images from './imageList';
+
+import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
+import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
+
+import { useState } from 'react';
+import { CloseOutlined } from '@ant-design/icons';
+import Image from 'next/image';
 
 interface IProps {
   selectedIndex: number;
+  togglePopup: () => void;
 }
 
-const ImgModal = ({ selectedIndex }: IProps) => {
-  const settings = {
-    dots: false,
-    fade: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    waitForAnimate: false,
-    display: true,
-    arrows: true,
-  };
+const ImgModal = ({ selectedIndex, togglePopup }: IProps) => {
+  const [thumbsSwiper, setThumbsSwiper] = useState<SwiperClass>();
+
+  const imageRender = images.map((item, index) => {
+    return (
+      <SwiperSlide key={`swiper-${index}}`}>
+        {/* <img src={item.src} style={{ width: '100%', height: 'auto' }} /> */}
+        <Image
+           src={item}
+           alt={''}
+           style={{ width: '100%', height: 'auto' }}
+         ></Image>
+      </SwiperSlide>
+    );
+  });
 
   return (
-    <div className='slider-container'>
-      <Slider {...settings}>
-        {images.map((image) => (
-          <img src={image} />
-        ))}
-      </Slider>
+    <div className='imgPopup'>
+      <div className='close-btn'>
+        <CloseOutlined onClick={togglePopup} />
+      </div>
+      <Swiper
+        slidesPerView={1}
+        loop={true}
+        initialSlide={selectedIndex}
+        navigation={true}
+        thumbs={{ swiper: thumbsSwiper }}
+        modules={[FreeMode, Navigation, Thumbs]}
+        className='mySwiper2'
+      >
+        {imageRender}
+      </Swiper>
+      <Swiper
+        onSwiper={setThumbsSwiper}
+        loop={true}
+        spaceBetween={10}
+        slidesPerView={3}
+        freeMode={true}
+        watchSlidesProgress={true}
+        modules={[FreeMode, Navigation, Thumbs]}
+        className='mySwiper'
+      >
+        {imageRender}
+      </Swiper>
     </div>
   );
 };

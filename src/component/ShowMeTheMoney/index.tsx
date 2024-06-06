@@ -53,15 +53,15 @@ const ShowMeTheMoney = () => {
   ];
 
   return (
-    <div className='money'>
+    <div id='money' className='money'>
       <div className='container'>
         <div className='header'>
           <div className='title'> 마음을 전하실 곳 </div>
         </div>
         <div className='body'>
-          참석이 어려워 직접 축하를 전하지 못하는 <br />
-          분들을 위해 안내드리니 <br />
-          넓은 마음으로 양해 부탁드립니다. <br />
+          참석이 어려워 <br />
+          직접 축하를 전하지 못하는 분들을 위해<br />
+          안내드리니 넓은 마음으로 이해 부탁드립니다.<br />
           축복해주시는 그마음 소중히 간직하여 <br />
           좋은 모습으로 보답하겠습니다. <br />
         </div>

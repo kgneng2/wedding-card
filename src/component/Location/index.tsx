@@ -1,10 +1,10 @@
-
 import { useEffect } from 'react';
 import './styles.scss';
 import { Button, message } from 'antd';
 
 import mapImg from '../../../public/images/map.png';
 import { CopyOutlined } from '@ant-design/icons';
+import Image from 'next/image';
 
 const Location = () => {
   useEffect(() => {
@@ -25,8 +25,8 @@ const Location = () => {
   // const [messageApi, contextHolder] = message.useMessage();  todo 좀더 고도화
 
   const naviMapAction = () => {
-    window.location.href =
-      'https://map.naver.com/?eText=%EB%8D%94%ED%8F%AC%EB%A0%88&amp;eType=SITE_1&amp;edid=11534903&amp;elng=b08f5c1d7950deeb7a58cbbd4ef5ac44&amp;elat=1ace7188539df29d76e2a4203c254176';
+    window.location.href = 'https://m.place.naver.com/place/11534903/home';
+    // 'https://map.naver.com/p/search/%EC%96%91%EC%9E%ACAt%ED%8F%AC%EB%A0%88/place/11534903?c=15.00,0,0,0,dh&isCorrectAnswer=true';
   };
 
   const copyAction = () => {
@@ -39,7 +39,7 @@ const Location = () => {
   };
 
   return (
-    <div className='location'>
+    <div id='location' className='location'>
       <div className='container'>
         <div className='header'>
           <h4 className='title'> Location </h4>
@@ -52,7 +52,7 @@ const Location = () => {
           aT포레 웨딩홀 5층
           <div className='navigation'>
             <Button className='btn' onClick={naviMapAction}>
-              <img src={mapImg.src} width='20' height='20' />
+              <Image src={mapImg} width={20} height={20} alt={'mapimage'} />
               <span className='txt'>네이버</span>
               빠른길 찾기
             </Button>
@@ -65,16 +65,23 @@ const Location = () => {
         <div className='info-box'>
           <div className='info-ti'> 자가용 🚗</div>
           <div className='info-txt'>
-            네비게이션 : "AT센터" 검색 
-            <div className='indent'>· 경부고속도로 양재 IC 개포, 가락방향 진출 후 염곡사거리에서 좌회전 후 U턴 꽃시장 옆</div>
+            네비게이션 : "AT센터" 검색
+            <div className='indent'>
+              · 경부고속도로 양재 IC 개포, 가락방향 진출 후 염곡사거리에서
+              좌회전 후 U턴 꽃시장 옆
+            </div>
           </div>
         </div>
         <div className='info-box'>
           <div className='info-ti'> 지하철 🚇 </div>
           <div className='info-txt'>
-          신분당선 양재시민의숲역(매헌) 하차
-          <div className='indent'>· 지상 4번출구 이용 / 지하 내부 통로로 바로 연결 가능 </div>
-          <div className='indent'>· 2호선 강남역과 3호선 양재역에서 신분당선 환승 가능</div>
+            신분당선 양재시민의숲역(매헌) 하차
+            <div className='indent'>
+              · 지상 4번출구 이용 / 지하 내부 통로로 바로 연결 가능{' '}
+            </div>
+            <div className='indent'>
+              · 2호선 강남역과 3호선 양재역에서 신분당선 환승 가능
+            </div>
           </div>
         </div>
       </div>

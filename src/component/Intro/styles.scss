@@ -56,9 +56,10 @@
   }
 
   .celebrate {
-    text-align: center;
     
     .txt {
+
+    text-align: center;
       display: block;
       font-family: roundhand;
       font-size: 90px;
@@ -78,7 +79,7 @@
     /* 화면 너비가 576px 이하일 때 */
     @media (max-width: 576px) {
       .txt {
-        font-size: 38px; /* 더 작은 텍스트 크기 설정 */
+        font-size: 36px; /* 더 작은 텍스트 크기 설정 */
       }
     }
 

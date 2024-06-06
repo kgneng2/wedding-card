@@ -48,7 +48,7 @@ const Contact = () => {
         {isPopupOpen && (
           <>
             <div className='overlay' onClick={togglePopup}></div>
-            <div className='popup'>
+            <div className='popup' onClick={togglePopup}>
               <div className='content'>
                 <div className='title'>혼주에게 연락하기</div>
 

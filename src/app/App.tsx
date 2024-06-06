@@ -11,6 +11,7 @@ import Guestbook from 'src/component/GuestBook';
 import GNB from 'src/component/GNB';
 import Blank from 'src/component/Blank';
 import MoveInfo from 'src/component/MoveInfo';
+import usePreventZoom from 'src/hook/usePreventZoom';
 
 const Opening: React.FC<{
   text: string;
@@ -35,7 +36,7 @@ const Opening: React.FC<{
   const defaultOptions = {
     loop: true,
     autoplay: true,
-    animationData: developingAnimation,
+    animationData: heartAnimation,
     rendererSettings: {
       preserveAspectRatio: 'xMidYMid slice',
     },
@@ -54,30 +55,42 @@ const Opening: React.FC<{
 };
 
 function App() {
-  // const [showOpening, setShowOpening] = useState<Boolean>(false); // 여기 바꿔야됨.
-  const [showOpening, setShowOpening] = useState<Boolean>(true);
+  const [visited, setVisited] = useState<boolean>(
+    sessionStorage.getItem('visited') === 'true'
+  );
 
   const handleFinishTyping = () => {
-    // 타이핑 효과가 끝나면 해당 컴포넌트를 사라지게 함
-    // setShowOpening(false);
+    setVisited(true);
   };
+
+  useEffect(() => {
+    const isVisited = sessionStorage.getItem('visited');
+    setVisited(isVisited === 'true');
+
+    if (!isVisited) {
+      setTimeout(() => {
+        sessionStorage.setItem('visited', 'true');
+      }, 5000);
+    }
+  }, []);
+
+  usePreventZoom();
+
+  const [isPopupOpen, setIsPopupOpen] = useState<boolean>(false);
 
   return (
     <>
-      {showOpening && (
-        <Opening
-          text={'준영이가 열심히 개발 중입니다.'}
-          onFinish={handleFinishTyping}
-        />
-      )}
-      {!showOpening && (
+      {visited ? (
         <div className='app'>
           <Suspense>
             <Intro />
           </Suspense>
-          <GNB />
+          {!isPopupOpen && <GNB />}
           <Suspense>
-            <Gallery />
+            <Gallery
+              isPopupOpen={isPopupOpen}
+              setIsPopupOpen={setIsPopupOpen}
+            />
           </Suspense>
           <MoveInfo />
           <Suspense>
@@ -85,6 +98,11 @@ function App() {
           </Suspense>
           <Blank />
         </div>
+      ) : (
+        <Opening
+          text={'준영 산하 결혼합니다'}
+          onFinish={handleFinishTyping}
+        />
       )}
     </>
   );

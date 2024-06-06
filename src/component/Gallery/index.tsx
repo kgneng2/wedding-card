@@ -1,51 +1,64 @@
 /* eslint-disable jsx-a11y/alt-text */
 'use client';
 import './styles.scss';
-import React from 'react';
-import { Image } from 'antd';
+import React, { useEffect, useState } from 'react';
 import images from './imageList'; // 이미지 목록 가져오기
+// import { Image } from 'antd';
+import ImgModal from 'src/component/Gallery/imgModal';
+import Image from 'next/image';
 
-const Gallery = () => {
-  // const [previewVisible, setPreviewVisible] = useState(false);
-  // const [previewImage, setPreviewImage] = useState('');
+const Gallery = ({ isPopupOpen, setIsPopupOpen }) => {
+  const [selected, setSelected] = useState<number>();
 
-  // const handlePreview = (imageSrc: any) => {
-  //   setPreviewImage(imageSrc);
-  //   setPreviewVisible(true);
-  // };
+  useEffect(() => {
+    if (isPopupOpen) {
+      // 팝업이 열렸을 때 body에 overflow: hidden 스타일 적용하여 스크롤 막기
+      document.body.style.overflow = 'hidden';
+    } else {
+      // 팝업이 닫혔을 때 body에 overflow: auto 스타일 적용하여 스크롤 활성화
+      document.body.style.overflow = 'auto';
+    }
+
+    // 컴포넌트가 unmount될 때 cleanup 수행
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isPopupOpen]);
+
+  const togglePopup = () => {
+    setIsPopupOpen(!isPopupOpen);
+  };
 
   return (
     <div className='gallery'>
       <div className='container'>
         <div className='header'>
           <div className='title'>GALLERY</div>
-          {/* <div className='sub-title'>우리의 순간</div> */}
         </div>
         <div className='body'>
-          <Image.PreviewGroup>
-            {images.map((image, index) => (
+          {images.map((image, index) => {
+            return (
               <Image
                 key={`img-${index}`}
                 className='image'
                 src={image}
-                // onClick={() => handlePreview(image)}
+                alt={`img-${index}`}
+                loading='lazy'
+                onClick={() => {
+                  console.log('index: ', index, isPopupOpen);
+                  setSelected(index);
+                  setIsPopupOpen(true);
+                }}
               />
-            ))}
-          </Image.PreviewGroup>
+            );
+          })}
         </div>
       </div>
-
-      {/* <Modal onCancel={() => setPreviewVisible(false)} footer={null}>
-        <img alt='preview' style={{ width: '100%' }} src={previewImage} />
-      </Modal> */}
+      {isPopupOpen && (
+        <ImgModal selectedIndex={selected || 0} togglePopup={togglePopup} />
+      )}
     </div>
   );
 };
-
+// https://nextjs.org/docs/app/api-reference/components/image 찾아보고 해보기.. loading에 대해서 이미지로딩 가능해보임.
 export default Gallery;
-
-// const togglePopup = (index: number) => {
-//   setPopup(!popup);
-//   setSelectedIndex(index);
-//   console.log(selectedIndex, images[selectedIndex]);
-// };
