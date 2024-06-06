@@ -12,8 +12,8 @@ import p11 from '../../../public/images/gallery/p11.jpg';
 import p12 from '../../../public/images/gallery/p12.jpg';
 import p13 from '../../../public/images/gallery/p13.jpg';
 import p14 from '../../../public/images/gallery/p14.jpg';
-import p21 from '../../../public/images/gallery/p21.jpg';
-import p22 from '../../../public/images/gallery/p22.jpg';
+// import p21 from '../../../public/images/gallery/p21.jpg';
+// import p22 from '../../../public/images/gallery/p22.jpg';
 import p31 from '../../../public/images/gallery/p31.jpg';
 import p32 from '../../../public/images/gallery/p32.jpg';
 import p33 from '../../../public/images/gallery/p33.jpg';
@@ -28,8 +28,8 @@ const images = [
   p5,
   p3,
   p4,
-  p1,
-  p2,
+  // p1,
+  // p2,
   p7,
   p8,
   p9,
@@ -38,8 +38,8 @@ const images = [
   p12,
   p13,
   p14,
-  p21,
-  p22,
+  // p21,
+  // p22,
   p34,
   p42,
   p41,
