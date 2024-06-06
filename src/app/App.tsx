@@ -1,17 +1,15 @@
+import React, { Suspense, useEffect, useState } from 'react';
 import Intro from '../component/Intro';
 import './App.scss';
 import Gallery from '../component/Gallery';
-import { Suspense, useEffect, useState } from 'react';
-
 import heartAnimation from '../animation/heart.json';
-import developingAnimation from '../animation/developing.json';
 import Lottie from 'react-lottie';
-
 import Guestbook from 'src/component/GuestBook';
 import GNB from 'src/component/GNB';
 import Blank from 'src/component/Blank';
 import MoveInfo from 'src/component/MoveInfo';
 import usePreventZoom from 'src/hook/usePreventZoom';
+import loadingAnimation from '../animation/loading.json'; // Lottie 파일을 여기에 넣으세요.
 
 const Opening: React.FC<{
   text: string;
@@ -31,7 +29,7 @@ const Opening: React.FC<{
     }, 150); // 100ms 마다 한 글자씩 표시
 
     return () => clearTimeout(timer);
-  }, [currentIndex, text, onFinish]);
+  }, [currentIndex, text]);
 
   const defaultOptions = {
     loop: true,
@@ -55,28 +53,52 @@ const Opening: React.FC<{
 };
 
 function App() {
-  const [visited, setVisited] = useState<boolean>(false)
-    // sessionStorage.getItem('visited') === 'true'
-  // );
+  const [visited, setVisited] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(true); // 로딩 상태 추가
+  const [isPopupOpen, setIsPopupOpen] = useState<boolean>(false);
 
+  // 수정된 부분 1: useEffect를 사용하여 로컬 스토리지에서 방문 여부를 확인합니다.
+  useEffect(() => {
+    const hasVisited = localStorage.getItem('hasVisited');
+    if (hasVisited) {
+      setVisited(true);
+    }
+    setLoading(false); // 로딩 상태 설정 완료
+  }, []);
+
+  // 수정된 부분 2: 타이핑이 완료되면 로컬 스토리지에 방문 여부를 저장합니다.
   const handleFinishTyping = () => {
     setVisited(true);
+    localStorage.setItem('hasVisited', 'true');
   };
-
-  // useEffect(() => {
-  //   const isVisited = sessionStorage.getItem('visited');
-  //   setVisited(isVisited === 'true');
-
-  //   if (!isVisited) {
-  //     setTimeout(() => {
-  //       sessionStorage.setItem('visited', 'true');
-  //     }, 3000);
-  //   }
-  // }, []);
 
   usePreventZoom();
 
-  const [isPopupOpen, setIsPopupOpen] = useState<boolean>(false);
+  const loadingOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: loadingAnimation,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  };
+
+  if (loading) {
+    return (
+      <Lottie
+        options={loadingOptions}
+        style={{
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          width: '100px',
+          height: '100px',
+          zIndex: 1,
+        }}
+      />
+    );
+  }
 
   return (
     <>
@@ -93,9 +115,7 @@ function App() {
             />
           </Suspense>
           <MoveInfo />
-          <Suspense>
-            <Guestbook />
-          </Suspense>
+          <Guestbook />
           <Blank />
         </div>
       ) : (
