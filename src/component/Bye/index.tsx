@@ -1,4 +1,3 @@
-import p6 from '../../../public/images/gallery/p6.jpeg';
 import './styles.scss';
 
 const Bye = () => {

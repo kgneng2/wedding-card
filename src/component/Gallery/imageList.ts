@@ -12,69 +12,40 @@ import p11 from '../../../public/images/gallery/p11.jpg';
 import p12 from '../../../public/images/gallery/p12.jpg';
 import p13 from '../../../public/images/gallery/p13.jpg';
 import p14 from '../../../public/images/gallery/p14.jpg';
-import p16 from '../../../public/images/gallery/p16.jpg';
-import p17 from '../../../public/images/gallery/p17.jpg';
-import p18 from '../../../public/images/gallery/p18.jpg';
-import p19 from '../../../public/images/gallery/p19.jpg';
-import p20 from '../../../public/images/gallery/p20.jpg';
 import p21 from '../../../public/images/gallery/p21.jpg';
 import p22 from '../../../public/images/gallery/p22.jpg';
-import p23 from '../../../public/images/gallery/p23.jpg';
-import main1 from '../../../public/images/main/main1.jpg';
-import main5 from '../../../public/images/main/main5.jpg';
-
-// const images = [
-//   p1.src,
-//   p2.src,
-//   p3.src,
-//   p4.src,
-//   p5.src,
-//   p16.src,
-//   p8.src,
-//   p7.src,
-//   p12.src,
-//   p9.src,
-//   p10.src,
-//   p13.src,
-//   p14.src,
-//   p6.src,
-//   main1.src,
-//   p23.src,
-//   p17.src,
-//   p18.src,
-//   p19.src,
-//   p20.src,
-//   p21.src,
-//   p22.src,
-//   p11.src,
-//   main5.src
-// ];
+import p31 from '../../../public/images/gallery/p31.jpg';
+import p32 from '../../../public/images/gallery/p32.jpg';
+import p33 from '../../../public/images/gallery/p33.jpg';
+import p34 from '../../../public/images/gallery/p34.jpg';
+import p41 from '../../../public/images/gallery/p41.jpg';
+import p42 from '../../../public/images/gallery/p42.jpg';
+// import main1 from '../../../public/images/main/main1.jpg';
+// import main5 from '../../../public/images/main/main5.jpg';
 
 const images = [
-  p1,
-  p2,
-  p3,
-  p4,
-  p5,
-  p16,
-  p8,
-  p7,
-  p12,
-  p9,
-  p10,
-  p13,
-  p14,
   p6,
-  main1,
-  p23,
-  p17,
-  p18,
-  p19,
-  p20,
-  p21,
-  p22,
-  p11,
-  main5
-]
+  p5,
+  // p3,
+  // p4,
+  // p1,
+  // p2,
+  // p7,
+  // p8,
+  // p9,
+  // p10,
+  // p11,
+  // p12,
+  // p13,
+  // p14,
+  // p21,
+  // p22,
+  // p34,
+  // p42,
+  // p41,
+  // p33,
+  // p31,
+  // p32,
+];
 
 export default images;
