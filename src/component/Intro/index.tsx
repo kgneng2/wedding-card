@@ -34,8 +34,15 @@ const Intro = () => {
             dots={false}
           >
             {doorImageList.map((img) => {
-              // return <Image src={img} alt={'images'}  fill/>
-              return <img src={img} className='image'></img>;
+              return (
+                <Image
+                  src={img}
+                  alt={'images'}
+                  width={350}
+                  height={490}
+                  className='image'
+                />
+              );
             })}
           </Carousel>
         </div>
