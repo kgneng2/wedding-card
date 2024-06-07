@@ -4,8 +4,8 @@ import React, { useEffect, useState } from 'react';
 import images from './imageList'; // 이미지 목록 가져오기
 import ImgModal from 'src/component/Gallery/imgModal';
 import Image from 'next/image';
-import loadingAnimation from '../../animation/loading.json'; // Lottie 파일을 여기에 넣으세요.
 import Lottie from 'react-lottie';
+import Loading from 'src/component/Loading';
 
 const Gallery = ({ isPopupOpen, setIsPopupOpen }) => {
   const [selected, setSelected] = useState<number>();
@@ -38,15 +38,6 @@ const Gallery = ({ isPopupOpen, setIsPopupOpen }) => {
     });
   };
 
-  const loadingOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: loadingAnimation,
-    rendererSettings: {
-      preserveAspectRatio: 'xMidYMid slice',
-    },
-  };
-
   return (
     <div className='gallery'>
       <div className='container'>
@@ -57,20 +48,7 @@ const Gallery = ({ isPopupOpen, setIsPopupOpen }) => {
           {images.map((image, index) => {
             return (
               <div className='image-container' key={`img-${index}`}>
-                {loadingStates[index] && (
-                  <Lottie
-                    options={loadingOptions}
-                    style={{
-                      position: 'absolute',
-                      top: '50%',
-                      left: '50%',
-                      transform: 'translate(-50%, -50%)',
-                      width: '100px',
-                      height: '100px',
-                      zIndex: 1,
-                    }}
-                  />
-                )}
+                {loadingStates[index] && <Loading />}
                 <Image
                   className={`image ${loadingStates[index] ? 'hidden' : ''}`}
                   src={image}

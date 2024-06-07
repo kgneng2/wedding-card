@@ -28,17 +28,20 @@ const NavigationBar = ({ onChange }) => {
 
   const [activeTab, setActiveTab] = useState('invitation');
 
+  const [latestActiveTab, setLatestActiveTab] = useState('invitation');
+
   useEffect(() => {
     const handleScroll = () => {
       const sections = tabArray.map((tab) => document.getElementById(tab.id));
-      let currentSectionId = 'invitation';
+      let currentSectionId = latestActiveTab;
 
       sections.forEach((section) => {
         const rect = section?.getBoundingClientRect();
 
         if (rect != undefined) {
-          if (rect!!.top <= 150 && rect!!.bottom >= 150) {
+          if (rect!!.top <= 300 && rect!!.bottom >= 300) {
             currentSectionId = section!!.id;
+            setLatestActiveTab(currentSectionId);
           }
         }
       });

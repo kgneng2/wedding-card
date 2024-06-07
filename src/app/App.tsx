@@ -9,7 +9,7 @@ import GNB from 'src/component/GNB';
 import Blank from 'src/component/Blank';
 import MoveInfo from 'src/component/MoveInfo';
 import usePreventZoom from 'src/hook/usePreventZoom';
-import loadingAnimation from '../animation/loading.json'; // Lottie 파일을 여기에 넣으세요.
+import Loading from 'src/component/Loading';
 
 const Opening: React.FC<{
   text: string;
@@ -80,29 +80,9 @@ function App() {
 
   usePreventZoom();
 
-  const loadingOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: loadingAnimation,
-    rendererSettings: {
-      preserveAspectRatio: 'xMidYMid slice',
-    },
-  };
-
   if (loading) {
     return (
-      <Lottie
-        options={loadingOptions}
-        style={{
-          position: 'absolute',
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
-          width: '100px',
-          height: '100px',
-          zIndex: 1,
-        }}
-      />
+      <Loading />
     );
   }
 
