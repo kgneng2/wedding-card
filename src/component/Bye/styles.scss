@@ -3,15 +3,6 @@
   height: 570px;
   position: relative;
   margin-bottom: 40px;
-<<<<<<< HEAD
-  background-image: linear-gradient(
-      to top,
-      rgba(255, 255, 255, 0),
-      rgba(255, 255, 255, 0) 40%
-    ),
-    url('../../../public/images/main/main5.jpg');
-  background-size: cover; /* 이미지를 요소에 맞게 확대/축소하고 잘림 없이 덮습니다 */
-=======
   overflow: hidden;
 
   .backgroundImage {
@@ -22,7 +13,6 @@
     height: 100%;
     z-index: -1; /* 텍스트가 이미지 위에 위치하도록 함 */
   }
->>>>>>> 84bbd0398a4bb09d7ba8d2b017f128f75a30ab2c
 
   .text {
     color: rgb(255, 255, 255);
