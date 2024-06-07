@@ -39,10 +39,13 @@ const Gallery = ({ isPopupOpen, setIsPopupOpen }) => {
           {images.map((image, index) => {
             return (
               <Image
-                // key={`img-${index}`}
+                key={`img-${index}`}
                 className='image'
                 src={image}
                 alt={`img-${index}`}
+                width={200}
+                height={100}
+                priority
                 onClick={() => {
                   console.log('index: ', index, isPopupOpen);
                   setSelected(index);

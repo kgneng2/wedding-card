@@ -24,7 +24,7 @@ const ImgModal = ({ selectedIndex, togglePopup }: IProps) => {
   const imageRender = images.map((item, index) => {
     return (
       <SwiperSlide key={`swiper-${index}}`}>
-        <Image src={item} alt={''} layout='responsive'></Image>
+        <Image src={item} alt={''} width={200} height={100}></Image>
       </SwiperSlide>
     );
   });
