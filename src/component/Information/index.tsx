@@ -36,6 +36,8 @@ const Information = () => {
           <Image
             src={banquetImg}
             alt={'식사안내'}
+            width={200}
+            height={200}
             style={{ width: '100%', height: 'auto' }}
           />
           <div className='line'>🍚 지하 1층에 연회장이 준비 되어 있습니다.</div>

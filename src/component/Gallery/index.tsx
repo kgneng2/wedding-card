@@ -75,6 +75,8 @@ const Gallery = ({ isPopupOpen, setIsPopupOpen }) => {
                   className={`image ${loadingStates[index] ? 'hidden' : ''}`}
                   src={image}
                   alt={`img-${index}`}
+                  width={200}
+                  height={100}
                   priority
                   onLoadingComplete={() => handleImageLoad(index)}
                   onClick={() => {

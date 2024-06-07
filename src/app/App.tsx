@@ -53,24 +53,30 @@ const Opening: React.FC<{
 };
 
 function App() {
-  const [visited, setVisited] = useState<boolean>(false);
+  const [visited, setVisited] = useState<boolean>(
+    sessionStorage.getItem('visited') === 'true'
+  );
+
   const [loading, setLoading] = useState<boolean>(true); // 로딩 상태 추가
   const [isPopupOpen, setIsPopupOpen] = useState<boolean>(false);
 
-  // 수정된 부분 1: useEffect를 사용하여 로컬 스토리지에서 방문 여부를 확인합니다.
-  useEffect(() => {
-    const hasVisited = localStorage.getItem('hasVisited');
-    if (hasVisited) {
-      setVisited(true);
-    }
-    setLoading(false); // 로딩 상태 설정 완료
-  }, []);
-
-  // 수정된 부분 2: 타이핑이 완료되면 로컬 스토리지에 방문 여부를 저장합니다.
   const handleFinishTyping = () => {
     setVisited(true);
-    localStorage.setItem('hasVisited', 'true');
   };
+
+  useEffect(() => {
+    const isVisited = sessionStorage.getItem('visited');
+
+    setVisited(isVisited === 'true');
+
+    if (!isVisited) {
+      setTimeout(() => {
+        sessionStorage.setItem('visited', 'true');
+      }, 5000);
+    }
+
+    setLoading(false);
+  }, []);
 
   usePreventZoom();
 
@@ -102,10 +108,10 @@ function App() {
 
   return (
     <>
-      {/* {visited ? ( */}
+      {visited ? (
         <div className='app'>
           <Suspense>
-            <Intro />
+            <Intro/>
           </Suspense>
           {!isPopupOpen && <GNB />}
           <Suspense>
@@ -118,12 +124,12 @@ function App() {
           <Guestbook />
           <Blank />
         </div>
-      {/* ) : (
+      ) : (
         <Opening
           text={'준영 산하 8월 25일 결혼합니다'}
           onFinish={handleFinishTyping}
         />
-      )} */}
+      )}
     </>
   );
 }

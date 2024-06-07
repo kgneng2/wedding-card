@@ -1,23 +1,15 @@
 import './styles.scss';
-import main1 from '../../../public/images/main/main1.jpg';
-import main2 from '../../../public/images/main/main2.jpg';
-import main3 from '../../../public/images/main/main3.jpg';
-import main4 from '../../../public/images/main/main4.jpg';
-import main6 from '../../../public/images/main/main6.jpg';
 import { Carousel } from 'antd';
 import Image from 'next/image';
-import { useEffect } from 'react';
 
 const Intro = () => {
-  const doorImageList = [main1, main2, main3, main4, main6];
-
-  useEffect(() => {
-    // 이미지 프리로딩
-    doorImageList.forEach((img) => {
-      const imgElement = document.createElement('img');
-      imgElement.src = img.src;
-    });
-  }, []);
+  const doorImageList = [
+    '/images/main/main1.jpg',
+    '/images/main/main2.jpg',
+    '/images/main/main3.jpg',
+    '/images/main/main4.jpg',
+    '/images/main/main6.jpg',
+  ];
 
   return (
     <>
@@ -41,9 +33,18 @@ const Intro = () => {
             autoplaySpeed={2000}
             dots={false}
           >
-            {doorImageList.map((img, index) => (
-              <Image key={index} className='image' src={img} alt={`${index}-images`} priority />
-            ))}
+            {doorImageList.map((img) => {
+              return (
+                <Image
+                  src={img}
+                  alt={'images'}
+                  width={350}
+                  height={490}
+                  className='image'
+                  priority
+                />
+              );
+            })}
           </Carousel>
         </div>
         <div className='celebrate'>
