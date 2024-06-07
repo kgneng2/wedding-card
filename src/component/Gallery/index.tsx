@@ -1,14 +1,15 @@
-/* eslint-disable jsx-a11y/alt-text */
 'use client';
 import './styles.scss';
 import React, { useEffect, useState } from 'react';
 import images from './imageList'; // 이미지 목록 가져오기
-// import { Image } from 'antd';
 import ImgModal from 'src/component/Gallery/imgModal';
 import Image from 'next/image';
+import loadingAnimation from '../../animation/loading.json'; // Lottie 파일을 여기에 넣으세요.
+import Lottie from 'react-lottie';
 
 const Gallery = ({ isPopupOpen, setIsPopupOpen }) => {
   const [selected, setSelected] = useState<number>();
+  const [loadingStates, setLoadingStates] = useState(images.map(() => true)); // 이미지별 로딩 상태 관리
 
   useEffect(() => {
     if (isPopupOpen) {
@@ -29,6 +30,23 @@ const Gallery = ({ isPopupOpen, setIsPopupOpen }) => {
     setIsPopupOpen(!isPopupOpen);
   };
 
+  const handleImageLoad = (index) => {
+    setLoadingStates((prevLoadingStates) => {
+      const newLoadingStates = [...prevLoadingStates];
+      newLoadingStates[index] = false;
+      return newLoadingStates;
+    });
+  };
+
+  const loadingOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: loadingAnimation,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  };
+
   return (
     <div className='gallery'>
       <div className='container'>
@@ -38,20 +56,36 @@ const Gallery = ({ isPopupOpen, setIsPopupOpen }) => {
         <div className='body'>
           {images.map((image, index) => {
             return (
-              <Image
-                key={`img-${index}`}
-                className='image'
-                src={image}
-                alt={`img-${index}`}
-                width={200}
-                height={100}
-                priority
-                onClick={() => {
-                  console.log('index: ', index, isPopupOpen);
-                  setSelected(index);
-                  setIsPopupOpen(true);
-                }}
-              />
+              <div className='image-container' key={`img-${index}`}>
+                {loadingStates[index] && (
+                  <Lottie
+                    options={loadingOptions}
+                    style={{
+                      position: 'absolute',
+                      top: '50%',
+                      left: '50%',
+                      transform: 'translate(-50%, -50%)',
+                      width: '100px',
+                      height: '100px',
+                      zIndex: 1,
+                    }}
+                  />
+                )}
+                <Image
+                  className={`image ${loadingStates[index] ? 'hidden' : ''}`}
+                  src={image}
+                  alt={`img-${index}`}
+                  width={200}
+                  height={100}
+                  priority
+                  onLoadingComplete={() => handleImageLoad(index)}
+                  onClick={() => {
+                    console.log('index: ', index, isPopupOpen);
+                    setSelected(index);
+                    setIsPopupOpen(true);
+                  }}
+                />
+              </div>
             );
           })}
         </div>
@@ -62,5 +96,5 @@ const Gallery = ({ isPopupOpen, setIsPopupOpen }) => {
     </div>
   );
 };
-// https://nextjs.org/docs/app/api-reference/components/image 찾아보고 해보기.. loading에 대해서 이미지로딩 가능해보임.
+
 export default Gallery;

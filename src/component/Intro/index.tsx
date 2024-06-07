@@ -41,6 +41,7 @@ const Intro = () => {
                   width={350}
                   height={490}
                   className='image'
+                  priority
                 />
               );
             })}

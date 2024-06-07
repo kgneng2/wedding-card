@@ -58,7 +58,11 @@ const Information = () => {
           <Image
             src={brideRoomImg}
             alt={'신부대기실'}
-            style={{ width: '100%', height: 'auto' }}
+            style={{
+              width: '100%',
+              height: 'auto',
+              transition: 'opacity 0.5s ease-in-out',
+            }}
           />
           <div className='line'>
             💐 신부대기실은 홀 반대편에 위치하고 있습니다.

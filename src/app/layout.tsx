@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     description: '준영이와 산하의 모바일 청첩장',
     images: [
       {
-        url: '/images/gallery/p42.jpg',
+        url: 'https://junyoung-sanha.online/images/gallery/p42.jpg',
         width: 1200,
         height: 630,
         alt: 'p6',

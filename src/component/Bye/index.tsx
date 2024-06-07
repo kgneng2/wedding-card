@@ -11,6 +11,7 @@ const Bye = () => {
         objectFit='cover'
         quality={100}
         className='backgroundImage'
+        priority
       />
       <div className='text'>
         저희의 새로운 시작을 축하해주셔서 <br />
