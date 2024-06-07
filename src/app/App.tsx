@@ -4,6 +4,7 @@ import Gallery from '../component/Gallery';
 import { Suspense, useEffect, useState } from 'react';
 
 import heartAnimation from '../animation/heart.json';
+import developingAnimation from '../animation/developing.json';
 import Lottie from 'react-lottie';
 
 import Guestbook from 'src/component/GuestBook';
@@ -99,7 +100,7 @@ function App() {
         </div>
       ) : (
         <Opening
-          text={'준영 산하 우리 이제 결혼합니다'}
+          text={'준영 산하 결혼합니다'}
           onFinish={handleFinishTyping}
         />
       )}

@@ -62,5 +62,5 @@ const Gallery = ({ isPopupOpen, setIsPopupOpen }) => {
     </div>
   );
 };
-
+// https://nextjs.org/docs/app/api-reference/components/image 찾아보고 해보기.. loading에 대해서 이미지로딩 가능해보임.
 export default Gallery;
