@@ -5,10 +5,21 @@ import hallImg from '../../../public/images/hall.jpg';
 import banquetImg from '../../../public/images/banquet.jpg';
 import brideRoomImg from '../../../public/images/brideRoom.jpg';
 import Image from 'next/image';
+import { useState } from 'react';
 
 const Information = () => {
   const onChange = (key: string) => {
     console.log(key);
+  };
+
+  const [loadingStates, setLoadingStates] = useState([true, true, true]); // 이미지별 로딩 상태 관리
+
+  const handleImageLoad = (index) => {
+    setLoadingStates((prevLoadingStates) => {
+      const newLoadingStates = [...prevLoadingStates];
+      newLoadingStates[index] = false;
+      return newLoadingStates;
+    });
   };
 
   const tabArray = [
@@ -20,6 +31,8 @@ const Information = () => {
             src={hallImg}
             alt={'hallimage'}
             style={{ width: '100%', height: 'auto' }}
+            objectFit='cover'
+            onLoadingComplete={() => handleImageLoad(0)}
           ></Image>
           <div className='line'> 💍 본식은 5층에서 12시 30분에 진행합니다.</div>
           <div className='line'>
@@ -39,6 +52,7 @@ const Information = () => {
             width={200}
             height={200}
             style={{ width: '100%', height: 'auto' }}
+            onLoadingComplete={() => handleImageLoad(1)}
           />
           <div className='line'>🍚 지하 1층에 연회장이 준비 되어 있습니다.</div>
           <div className='line'>
@@ -63,6 +77,7 @@ const Information = () => {
               height: 'auto',
               transition: 'opacity 0.5s ease-in-out',
             }}
+            onLoadingComplete={() => handleImageLoad(2)}
           />
           <div className='line'>
             💐 신부대기실은 홀 반대편에 위치하고 있습니다.
