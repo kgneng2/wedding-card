@@ -72,7 +72,7 @@ function App() {
     if (!isVisited) {
       setTimeout(() => {
         sessionStorage.setItem('visited', 'true');
-      }, 5000);
+      }, 4000);
     }
 
     setLoading(false);
