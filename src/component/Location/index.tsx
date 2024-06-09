@@ -66,8 +66,8 @@ const Location = () => {
           <div className='info-ti'> 자가용 🚗</div>
           <div className='info-txt'>
             네비게이션 : "AT센터" 검색
-            <div className='indent'>
-              · 경부고속도로 양재 IC 개포, 가락방향 진출 후 염곡사거리에서
+            <div>
+              - 경부고속도로 양재 IC 개포, 가락방향 진출 후 염곡사거리에서
               좌회전 후 U턴 꽃시장 옆
             </div>
           </div>
@@ -76,11 +76,11 @@ const Location = () => {
           <div className='info-ti'> 지하철 🚇 </div>
           <div className='info-txt'>
             신분당선 양재시민의숲역(매헌) 하차
-            <div className='indent'>
-              · 지상 4번출구 이용 / 지하 내부 통로로 바로 연결 가능{' '}
+            <div>
+            - 지상 4번출구 이용 / 지하 내부 통로로 바로 연결 가능{' '}
             </div>
-            <div className='indent'>
-              · 2호선 강남역과 3호선 양재역에서 신분당선 환승 가능
+            <div>
+            - 2호선 강남역과 3호선 양재역에서 신분당선 환승 가능
             </div>
           </div>
         </div>
