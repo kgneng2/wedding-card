@@ -2,7 +2,7 @@ const MoveInfo = () => {
   return (
     <div
       style={{
-        padding: '30px',
+        paddingTop: '70px',
         fontSize: '14px',
         textAlign: 'center',
         lineHeight: '23px',
@@ -10,7 +10,7 @@ const MoveInfo = () => {
       }}
     >
       예식과 관련된 정보는 하단의 <br />{' '}
-      <span style={{ fontWeight: 1000, fontSize: '15px', color: 'black' }}>
+      <span style={{ fontWeight: 1000, fontSize: '17px', color: 'black' }}>
         '👰🏻‍♀️ 예식 정보 보기'
       </span>
       를 눌러주세요.

@@ -8,7 +8,7 @@ const Intro = () => {
     '/images/main/main2.jpg',
     '/images/main/main3.jpg',
     '/images/main/main4.jpg',
-    '/images/main/main6.jpg',
+    // '/images/main/main6.jpg',
   ];
 
   return (
@@ -30,7 +30,7 @@ const Intro = () => {
             autoplay
             fade={true}
             effect='fade'
-            autoplaySpeed={2000}
+            autoplaySpeed={1500}
             dots={false}
           >
             {doorImageList.map((img) => {

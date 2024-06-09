@@ -3,7 +3,6 @@ import { Tabs } from 'antd';
 import './styles.scss';
 import hallImg from '../../../public/images/hall.jpg';
 import banquetImg from '../../../public/images/banquet.jpg';
-import brideRoomImg from '../../../public/images/brideRoom.jpg';
 import Image from 'next/image';
 import { useState } from 'react';
 
@@ -15,11 +14,11 @@ const Information = () => {
   const [loadingStates, setLoadingStates] = useState([true, true, true]); // 이미지별 로딩 상태 관리
 
   const handleImageLoad = (index) => {
-    setLoadingStates((prevLoadingStates) => {
-      const newLoadingStates = [...prevLoadingStates];
-      newLoadingStates[index] = false;
-      return newLoadingStates;
-    });
+    loadingStates[index] = false;
+    setLoadingStates(loadingStates);
+
+    console.log('loading 끝? ');
+    loadingStates.forEach(console.log);
   };
 
   const tabArray = [
@@ -29,9 +28,11 @@ const Information = () => {
         <div className='tab'>
           <Image
             src={hallImg}
+            width={200}
+            height={200}
             alt={'hallimage'}
+            placeholder='blur'
             style={{ width: '100%', height: 'auto' }}
-            objectFit='cover'
             onLoadingComplete={() => handleImageLoad(0)}
           ></Image>
           <div className='line'> 💍 본식은 5층에서 12시 30분에 진행합니다.</div>
@@ -52,6 +53,7 @@ const Information = () => {
             width={200}
             height={200}
             style={{ width: '100%', height: 'auto' }}
+            placeholder='blur'
             onLoadingComplete={() => handleImageLoad(1)}
           />
           <div className='line'>🍚 지하 1층에 연회장이 준비 되어 있습니다.</div>
@@ -70,13 +72,16 @@ const Information = () => {
       content: (
         <div className='tab'>
           <Image
-            src={brideRoomImg}
+            src={'/images/brideRoom.jpg'}
+            width={200}
+            height={200}
             alt={'신부대기실'}
             style={{
               width: '100%',
               height: 'auto',
               transition: 'opacity 0.5s ease-in-out',
             }}
+            // placeholder='blur'
             onLoadingComplete={() => handleImageLoad(2)}
           />
           <div className='line'>
