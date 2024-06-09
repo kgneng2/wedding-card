@@ -22,12 +22,18 @@
 // import p42 from '../../../public/images/gallery/p42.jpg';
 
 const images = [
+  '/images/main/main1.jpg',
+  '/images/main/main2.jpg',
+  '/images/main/main3.jpg',
+  '/images/main/main4.jpg',
   '/images/gallery/p6.jpg',
   '/images/gallery/p5.jpg',
   '/images/gallery/p3.jpg',
   '/images/gallery/p4.jpg',
   '/images/gallery/p1.jpg',
   '/images/gallery/p2.jpg',
+  '/images/good/p133.jpg',
+  '/images/main/main6.jpg',
   '/images/gallery/p7.jpg',
   '/images/gallery/p8.jpg',
   '/images/gallery/p9.jpg',

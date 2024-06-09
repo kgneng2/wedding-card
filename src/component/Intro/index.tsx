@@ -30,7 +30,7 @@ const Intro = () => {
             autoplay
             fade={true}
             effect='fade'
-            autoplaySpeed={2000}
+            autoplaySpeed={1500}
             dots={false}
           >
             {doorImageList.map((img) => {
