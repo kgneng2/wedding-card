@@ -49,7 +49,6 @@ const Intro = () => {
                        (max-width: 1440px) 100vw, 
                        (max-width: 1920px) 100vw, 
                        100vw'
-                  unoptimized
                 />
               );
             })}
