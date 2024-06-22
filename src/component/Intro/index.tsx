@@ -36,13 +36,13 @@ const Intro = () => {
           >
             {doorImageList.map((img) => {
               return (
-                <img
+                <Image
                   src={img}
                   alt={'images'}
                   width={350}
                   height={490}
                   className='image'
-                  // priority
+                  priority
                 />
               );
             })}
