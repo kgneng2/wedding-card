@@ -4,7 +4,6 @@ import React, { useEffect, useState } from 'react';
 import images from './imageList'; // 이미지 목록 가져오기
 import ImgModal from 'src/component/Gallery/imgModal';
 import Image from 'next/image';
-import Lottie from 'react-lottie';
 import Loading from 'src/component/Loading';
 
 const Gallery = ({ isPopupOpen, setIsPopupOpen }) => {
@@ -56,7 +55,7 @@ const Gallery = ({ isPopupOpen, setIsPopupOpen }) => {
                   width={200}
                   height={100}
                   priority
-                  onLoadingComplete={() => handleImageLoad(index)}
+                  onLoad={() => handleImageLoad(index)}
                   onClick={() => {
                     console.log('index: ', index, isPopupOpen);
                     setSelected(index);

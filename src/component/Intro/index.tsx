@@ -8,7 +8,8 @@ const Intro = () => {
     '/images/main/main2.jpg',
     '/images/main/main3.jpg',
     '/images/main/main4.jpg',
-    // '/images/main/main6.jpg',
+    '/images/main/main5.jpg',
+    '/images/main/main6.jpg',
   ];
 
   return (

@@ -5,7 +5,7 @@ const Bye = () => {
   return (
     <div className='bye'>
       <Image
-        src='/images/main/main5.jpg'
+        src='/images/gallery/last.jpg'
         alt='Background Image'
         layout='fill'
         objectFit='cover'
