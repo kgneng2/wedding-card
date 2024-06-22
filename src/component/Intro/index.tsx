@@ -38,12 +38,18 @@ const Intro = () => {
               return (
                 <Image
                   src={img}
-                  alt={'images'}
+                  alt='images'
                   width={350}
                   height={490}
                   className='image'
+                  layout='responsive'
+                  sizes='(max-width: 480px) 100vw, 
+                       (max-width: 768px) 100vw, 
+                       (max-width: 1024px) 100vw, 
+                       (max-width: 1440px) 100vw, 
+                       (max-width: 1920px) 100vw, 
+                       100vw'
                   unoptimized
-                  priority
                 />
               );
             })}

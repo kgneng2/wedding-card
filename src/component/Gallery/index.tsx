@@ -53,15 +53,22 @@ const Gallery = ({ isPopupOpen, setIsPopupOpen }) => {
                   src={image}
                   alt={`img-${index}`}
                   width={200}
-                  height={100}
+                  height={300}
                   priority
-                  unoptimized
                   onLoad={() => handleImageLoad(index)}
                   onClick={() => {
                     console.log('index: ', index, isPopupOpen);
                     setSelected(index);
                     setIsPopupOpen(true);
                   }}
+                  // layout='responsive'
+                  sizes='(max-width: 480px) 100vw,
+                       (max-width: 768px) 100vw,
+                       (max-width: 1024px) 100vw,
+                       (max-width: 1440px) 100vw,
+                       (max-width: 1920px) 100vw,
+                       100vw'
+                  unoptimized
                 />
               </div>
             );
