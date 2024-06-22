@@ -55,6 +55,7 @@ const Gallery = ({ isPopupOpen, setIsPopupOpen }) => {
                   width={200}
                   height={100}
                   priority
+                  placeholder='blur'
                   onLoad={() => handleImageLoad(index)}
                   onClick={() => {
                     console.log('index: ', index, isPopupOpen);
