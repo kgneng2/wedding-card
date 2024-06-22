@@ -8,7 +8,8 @@ const Intro = () => {
     '/images/main/main2.jpg',
     '/images/main/main3.jpg',
     '/images/main/main4.jpg',
-    // '/images/main/main6.jpg',
+    '/images/main/main5.jpg',
+    '/images/main/main6.jpg',
   ];
 
   return (
@@ -35,13 +36,13 @@ const Intro = () => {
           >
             {doorImageList.map((img) => {
               return (
-                <Image
+                <img
                   src={img}
                   alt={'images'}
                   width={350}
                   height={490}
                   className='image'
-                  priority
+                  // priority
                 />
               );
             })}

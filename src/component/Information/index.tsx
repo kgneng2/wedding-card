@@ -81,7 +81,7 @@ const Information = () => {
               height: 'auto',
               transition: 'opacity 0.5s ease-in-out',
             }}
-            // placeholder='blur'
+            placeholder='blur'
             onLoadingComplete={() => handleImageLoad(2)}
           />
           <div className='line'>
